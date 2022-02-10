@@ -6,11 +6,13 @@ const theme: DefaultTheme = {
     titleText: '32px',
   },
   colors: {
-    main: 'blue',
-    dark: 'black',
-    light: 'gray',
+    main: '#5c5c5c',
+    dark: '#282828',
+    light: '#d1d1d1',
     white: '#fff',
-    error: 'red',
+    orange: '#f9b334',
+    orangelight: '#ffb366',
+    error: '#D32F2F',
   },
 };
 
