@@ -1,0 +1,29 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "strict": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./src",
+    "paths": {
+      "store": ["./src/store"],
+      "pages": ["./src/pages"],
+      "components": ["./src/components"],
+      "utils": ["./src/utils"],
+      "assets": ["./src/assets"],
+      "hooks": ["./src/hooks"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build"]
+}

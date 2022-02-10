@@ -1,0 +1,45 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "react-hooks", "prettier"],
+  "extends": [
+    "prettier",
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "import/prefer-default-export": "off",
+    "import/extensions": ["error", "ignorePackages", { "js": "never", "jsx": "never", "ts": "never", "tsx": "never" }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "prettier/prettier": "error",
+    "no-use-before-define": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "alias": {
+        "map": [
+          ["store", "./src/store"],
+          ["components", "./src/components"],
+          ["utils", "./src/utils"],
+          ["pages", "./src/pages"],
+          ["assets", "./src/assets"],
+          ["hooks", "./src/hooks"]
+        ],
+        "extensions": [".tsx", ".ts", ".js", ".jsx", ".json"]
+      }
+    }
+  }
+}
