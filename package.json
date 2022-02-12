@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate",
+  "name": "Fraternity",
   "version": "0.0.1",
-  "description": "",
+  "description": "Social networking",
   "main": "src/app.js",
   "author": "Daniel",
   "license": "MIT",
