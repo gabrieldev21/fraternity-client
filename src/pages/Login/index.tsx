@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
 import { MdPerson, MdLockOutline } from 'react-icons/md';
 import { useForm } from 'react-hook-form';
@@ -15,7 +16,7 @@ type LoginForm = {
 };
 
 const Login = () => {
-  const { register, handleSubmit, formState } = useForm<TFieldValues>({
+  const { register, handleSubmit, formState } = useForm<LoginForm>({
     mode: 'onBlur',
     resolver: LoginSchema,
   });
