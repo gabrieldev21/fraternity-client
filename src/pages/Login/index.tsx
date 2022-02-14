@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
 import { MdPerson, MdLockOutline } from 'react-icons/md';
 import { useForm } from 'react-hook-form';
