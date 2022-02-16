@@ -56,7 +56,7 @@ const Register = () => {
             />
             <TextInput
               {...register('telefone')}
-              error={formState.errors.telephone?.message}
+              error={formState.errors.phone?.message}
               color={theme.colors.white}
               type="telephone"
               label="Telefone"
