@@ -21,6 +21,8 @@ const Login = () => {
   });
   const [loading, setLoading] = useState(false);
   const theme = useTheme();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const onSubmit = () => {
     // TODO: Integrate with api
@@ -40,6 +42,8 @@ const Login = () => {
             <S.LogoTransparent />
             <TextInput
               {...register('email')}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               error={formState.errors.email?.message}
               color={theme.colors.white}
               type="email"
@@ -48,13 +52,15 @@ const Login = () => {
             />
             <TextInput
               {...register('password')}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               error={formState.errors.password?.message}
               color={theme.colors.white}
               type="password"
               label="Senha"
               icon={MdLockOutline}
             />
-            <Button>Entrar</Button>
+            <Button type="submit">Entrar</Button>
           </S.Fade>
         )}
       </S.CardContainer>

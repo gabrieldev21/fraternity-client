@@ -6,16 +6,19 @@ import { useForm } from 'react-hook-form';
 import useTheme from 'hooks/useTheme';
 import { TextInput, LoadingLogo, Button } from '../../components';
 import * as S from './styleds';
-import LoginSchema from '../Login';
+import RegisterSchema from './RegisterSchema';
 
 const Register = () => {
   const { register, handleSubmit, formState } = useForm<TFieldValues>({
     mode: 'onBlur',
-    resolver: LoginSchema,
+    resolver: RegisterSchema,
   });
-
   const theme = useTheme();
   const [loading, setLoading] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [phone, setPhone] = useState(Number);
 
   const onSubmit = () => {
     //  TODO: Integrate with api
@@ -35,6 +38,8 @@ const Register = () => {
             <S.LogoTransparent />
             <TextInput
               {...register('nome')}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               error={formState.errors.name?.message}
               color={theme.colors.white}
               type="name"
@@ -42,6 +47,8 @@ const Register = () => {
             />
             <TextInput
               {...register('password')}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               error={formState.errors.password?.message}
               color={theme.colors.white}
               type="password"
@@ -49,6 +56,8 @@ const Register = () => {
             />
             <TextInput
               {...register('email')}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               error={formState.errors.email?.message}
               color={theme.colors.white}
               type="email"
@@ -56,6 +65,8 @@ const Register = () => {
             />
             <TextInput
               {...register('telefone')}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               error={formState.errors.phone?.message}
               color={theme.colors.white}
               type="telephone"
