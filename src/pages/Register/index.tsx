@@ -4,14 +4,21 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import useTheme from 'hooks/useTheme';
-import { TextInput, LoadingLogo, Button } from '../../components';
+import { TextInput, LoadingLogo, Button } from 'components/';
 import * as S from './styleds';
-import LoginSchema from '../Login';
+import RegisterSchema from './RegisterSchema';
+
+type RegisterForm = {
+  name: string,
+  email: string,
+  password: string,
+  phone: number,
+};
 
 const Register = () => {
-  const { register, handleSubmit, formState } = useForm<TFieldValues>({
+  const { register, handleSubmit, formState } = useForm<RegisterForm>({
     mode: 'onBlur',
-    resolver: LoginSchema,
+    resolver: RegisterSchema,
   });
 
   const theme = useTheme();
@@ -34,7 +41,7 @@ const Register = () => {
           <S.Fade>
             <S.LogoTransparent />
             <TextInput
-              {...register('nome')}
+              {...register('name')}
               error={formState.errors.name?.message}
               color={theme.colors.white}
               type="name"
@@ -55,10 +62,10 @@ const Register = () => {
               label="E-mail"
             />
             <TextInput
-              {...register('telefone')}
+              {...register('phone')}
               error={formState.errors.phone?.message}
               color={theme.colors.white}
-              type="telephone"
+              type="phone"
               label="Telefone"
             />
             <Button>Registrar</Button>

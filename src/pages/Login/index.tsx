@@ -5,7 +5,7 @@ import { MdPerson, MdLockOutline } from 'react-icons/md';
 import { useForm } from 'react-hook-form';
 
 import useTheme from 'hooks/useTheme';
-import { TextInput, LoadingLogo, Button } from '../../components';
+import { TextInput, LoadingLogo, Button } from 'components/';
 import * as S from './styleds';
 import LoginSchema from './LoginSchema';
 
@@ -15,7 +15,7 @@ type LoginForm = {
 };
 
 const Login = () => {
-  const { register, handleSubmit, formState } = useForm<TFieldValues>({
+  const { register, handleSubmit, formState } = useForm<LoginForm>({
     mode: 'onBlur',
     resolver: LoginSchema,
   });
