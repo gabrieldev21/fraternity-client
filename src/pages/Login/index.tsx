@@ -54,7 +54,7 @@ const Login = () => {
               label="Senha"
               icon={MdLockOutline}
             />
-            <Button>Entrar</Button>
+            <Button type="submit">Entrar</Button>
           </S.Fade>
         )}
       </S.CardContainer>

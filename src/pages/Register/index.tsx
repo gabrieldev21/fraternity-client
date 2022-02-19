@@ -20,7 +20,6 @@ const Register = () => {
     mode: 'onBlur',
     resolver: RegisterSchema,
   });
-
   const theme = useTheme();
   const [loading, setLoading] = useState(false);
 
