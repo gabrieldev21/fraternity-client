@@ -1,8 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
-import { MdPerson, MdLockOutline } from 'react-icons/md';
+import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { MdPerson, MdLockOutline } from 'react-icons/md';
+import { useTranslation } from 'react-i18next';
+// import { useDispatch, useSelector } from 'react-redux';
 
 import useTheme from 'hooks/useTheme';
 import { TextInput, LoadingLogo, Button } from 'components/';
@@ -19,15 +20,16 @@ const Login = () => {
     mode: 'onBlur',
     resolver: LoginSchema,
   });
-  const [loading, setLoading] = useState(false);
+  const history = useHistory();
+  // const dispatch = useDispatch();
   const theme = useTheme();
+  const { t } = useTranslation();
+  const [loading, setLoading] = useState(false);
 
-  const onSubmit = () => {
+  const onSubmit = (data: LoginForm) => {
     // TODO: Integrate with api
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
+    setLoading(false);
   };
 
   return (
@@ -43,7 +45,7 @@ const Login = () => {
               error={formState.errors.email?.message}
               color={theme.colors.white}
               type="email"
-              label="E-mail"
+              label={t('input.email')}
               icon={MdPerson}
             />
             <TextInput
@@ -51,10 +53,10 @@ const Login = () => {
               error={formState.errors.password?.message}
               color={theme.colors.white}
               type="password"
-              label="Senha"
+              label={t('input.password')}
               icon={MdLockOutline}
             />
-            <Button type="submit">Entrar</Button>
+            <Button type="submit">{t('button.signin')}</Button>
           </S.Fade>
         )}
       </S.CardContainer>
