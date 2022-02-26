@@ -11,18 +11,11 @@
     "skipLibCheck": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "emitDeclarationOnly": true,
     "declaration": true,
     "resolveJsonModule": true,
     "baseUrl": "./src",
-    "paths": {
-      "store": ["./src/store"],
-      "pages": ["./src/pages"],
-      "components": ["./src/components"],
-      "utils": ["./src/utils"],
-      "assets": ["./src/assets"],
-      "hooks": ["./src/hooks"]
-    }
+    "rootDir": "./src",
+    "outDir": "./build"
   },
   "include": ["src"],
   "exclude": ["node_modules", "build"]
