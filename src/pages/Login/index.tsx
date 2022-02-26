@@ -1,16 +1,14 @@
-/* eslint-disable @typescript-eslint/ban-types */
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { MdPerson, MdLockOutline } from 'react-icons/md';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { ThunkDispatch } from 'redux-thunk';
-import { AnyAction } from 'redux';
 
 import useTheme from 'hooks/useTheme';
 import { TextInput, LoadingLogo, Button } from 'components/';
-import { authentication } from 'store/modules/user/actions';
+import { authentication } from 'store/modules/user';
+import { DispatchType } from 'store/modules/types';
 import LoginSchema from './LoginSchema';
 import * as S from './styleds';
 
@@ -25,13 +23,12 @@ const Login = () => {
     resolver: LoginSchema,
   });
   const history = useHistory();
-  const dispatch: ThunkDispatch<{}, any, AnyAction> = useDispatch();
+  const dispatch: DispatchType = useDispatch();
   const theme = useTheme();
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data: LoginForm) => {
-    // TODO: Integrate with api
     setLoading(true);
     const success = await dispatch(authentication(data));
     setLoading(false);
