@@ -8,8 +8,3 @@ export interface IUserState {
   error?: string;
   userInfo: { email?: string, password?: string };
 }
-
-export interface IAction {
-  type: string;
-  payload?: string;
-}
