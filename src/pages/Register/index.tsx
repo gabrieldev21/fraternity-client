@@ -2,6 +2,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 import useTheme from 'hooks/useTheme';
 import { TextInput, LoadingLogo, Button } from 'components/';
@@ -12,7 +13,6 @@ type RegisterForm = {
   name: string,
   email: string,
   password: string,
-  phone: number,
 };
 
 const Register = () => {
@@ -22,6 +22,7 @@ const Register = () => {
   });
   const theme = useTheme();
   const [loading, setLoading] = useState(false);
+  const { t } = useTranslation();
 
   const onSubmit = () => {
     //  TODO: Integrate with api
@@ -44,30 +45,23 @@ const Register = () => {
               error={formState.errors.name?.message}
               color={theme.colors.white}
               type="name"
-              label="Nome"
+              label={t('input.name')}
             />
             <TextInput
               {...register('password')}
               error={formState.errors.password?.message}
               color={theme.colors.white}
               type="password"
-              label="Senha"
+              label={t('input.password')}
             />
             <TextInput
               {...register('email')}
               error={formState.errors.email?.message}
               color={theme.colors.white}
               type="email"
-              label="E-mail"
+              label={t('input.email')}
             />
-            <TextInput
-              {...register('phone')}
-              error={formState.errors.phone?.message}
-              color={theme.colors.white}
-              type="phone"
-              label="Telefone"
-            />
-            <Button>Registrar</Button>
+            <Button>{t('button.signup')}</Button>
           </S.Fade>
         )}
       </S.CardContainer>
