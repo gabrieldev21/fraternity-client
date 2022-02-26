@@ -1,5 +1,5 @@
 {
-  "name": "Fraternity",
+  "name": "fraternity-web",
   "version": "0.0.1",
   "description": "Social networking",
   "main": "src/app.js",
@@ -39,16 +39,10 @@
     "styled-components": "^5.3.3",
     "styled-normalize": "^8.0.7",
     "swiper": "^7.2.0",
-    "typescript": "^4.4.4",
+    "typescript": "^4.5.5",
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
-    "@babel/plugin-transform-async-to-generator": "^7.16.8",
-    "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.15.8",
-    "@babel/preset-react": "^7.14.5",
-    "@babel/preset-typescript": "^7.15.0",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/addon-links": "^6.3.12",
@@ -65,7 +59,6 @@
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
     "axios": "^0.26.0",
-    "babel-loader": "^8.2.3",
     "css-loader": "^6.5.0",
     "eslint": "^8.1.0",
     "eslint-config-airbnb": "^18.2.1",
