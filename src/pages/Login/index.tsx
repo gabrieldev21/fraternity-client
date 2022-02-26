@@ -30,15 +30,13 @@ const Login = () => {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = (data: LoginForm) => {
+  const onSubmit = async (data: LoginForm) => {
     // TODO: Integrate with api
     setLoading(true);
-    dispatch(authentication(data)).then((success) => {
-      setLoading(false);
-      if (!success) return;
-      history.replace('/');
-      console.log('');
-    });
+    const success = await dispatch(authentication(data));
+    setLoading(false);
+    if (!success) return;
+    history.replace('/');
   };
 
   return (

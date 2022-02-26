@@ -32,7 +32,7 @@ export const authentication =
   async (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
     try {
       const { data } = await api.post<UserAuthResponse>('auth/token', { email, password });
-      localStorage.setItem('email', JSON.stringify(data));
+      localStorage.setItem('user', JSON.stringify(data));
       dispatch(setUser(data));
       console.log(data);
       return true;
@@ -43,27 +43,25 @@ export const authentication =
   };
 
 export const logout = () => (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
-  localStorage.removeItem('token');
+  localStorage.removeItem('user');
   dispatch(logoutUser());
 };
 
 // Initial State
 export interface State {
-  authenticated: boolean;
   token?: string;
 }
 
-const initialState: State = { authenticated: false };
+const initialState: State = { ...JSON.parse(localStorage.getItem('user') || '{}') };
 
 // Reducer
-// export default createReducer(initialState, {
-//   [LOGOUT_USER]: () => initialState,
-// });
 
 export default createReducer(initialState, {
   [SET_USER]: (state, action: IAction<UserAuthResponse>) => ({
     ...state,
-    authenticated: true,
     token: action.payload?.token,
+  }),
+  [LOGOUT_USER]: () => ({
+    ...initialState,
   }),
 });

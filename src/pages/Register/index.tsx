@@ -13,7 +13,6 @@ type RegisterForm = {
   name: string,
   email: string,
   password: string,
-  phone: number,
 };
 
 const Register = () => {
@@ -61,13 +60,6 @@ const Register = () => {
               color={theme.colors.white}
               type="email"
               label={t('input.email')}
-            />
-            <TextInput
-              {...register('phone')}
-              error={formState.errors.phone?.message}
-              color={theme.colors.white}
-              type="phone"
-              label={t('input.phone')}
             />
             <Button>{t('button.signup')}</Button>
           </S.Fade>
