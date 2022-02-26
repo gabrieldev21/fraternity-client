@@ -10,7 +10,7 @@ import { AnyAction } from 'redux';
 
 import useTheme from 'hooks/useTheme';
 import { TextInput, LoadingLogo, Button } from 'components/';
-import { authentication } from 'store/modules/user';
+import { authentication } from 'store/modules/user/actions';
 import LoginSchema from './LoginSchema';
 import * as S from './styleds';
 

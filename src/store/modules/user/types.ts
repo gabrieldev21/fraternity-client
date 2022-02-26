@@ -1,10 +1,16 @@
-export const USER_LOGIN_REQUEST = 'USER_LOGIN_REQUEST';
-export const USER_LOGIN_SUCESS = 'USER_LOGIN_SUCESS';
-export const USER_LOGIN_FAIL = 'USER_LOGIN_FAIL';
-export const USER_LOGOUT = 'USER_LOGOUT';
+// Action Types
+export const SET_USER = 'SET_USER';
+export const LOGOUT_USER = 'USER/LOGOUT';
 
-export interface IUserState {
-  loading?: boolean;
-  error?: string;
-  userInfo: { email?: string, password?: string };
+export interface State {
+  token?: string;
+}
+
+export interface UserCredential {
+  email: string;
+  password: string;
+}
+
+export interface UserAuthResponse {
+  token: string;
 }
