@@ -1,11 +1,11 @@
 {
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaVersion": "latest",
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint", "react-hooks", "prettier"],
+  "plugins": ["@typescript-eslint", "react-hooks", "prettier","import"],
   "extends": [
     "prettier",
     "airbnb",
@@ -15,7 +15,16 @@
   ],
   "rules": {
     "import/prefer-default-export": "off",
-    "import/extensions": ["error", "ignorePackages", { "js": "never", "jsx": "never", "ts": "never", "tsx": "never" }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "prettier/prettier": "error",
     "no-use-before-define": "off",
@@ -26,19 +35,9 @@
   },
   "settings": {
     "import/resolver": {
+      "typescript": {},
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      },
-      "alias": {
-        "map": [
-          ["store", "./src/store"],
-          ["components", "./src/components"],
-          ["utils", "./src/utils"],
-          ["pages", "./src/pages"],
-          ["assets", "./src/assets"],
-          ["hooks", "./src/hooks"]
-        ],
-        "extensions": [".tsx", ".ts", ".js", ".jsx", ".json"]
       }
     }
   }
