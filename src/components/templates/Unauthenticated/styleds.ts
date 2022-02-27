@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import imageSrc from 'assets/images/background-enter.jpg';
-import LogoSVG from './Logo';
+import LogoSVG from 'components/Logo';
 
 export const Wrapper = styled.div`
   background-color: hsl(232deg 16% 19%);
@@ -61,12 +61,11 @@ export const Subtitle = styled.h2`
 `;
 
 export const Container = styled.div`
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin: 40px;
   position: relative;
   z-index: 1;
 `;
@@ -88,4 +87,12 @@ export const FormRow = styled.div`
     margin-right: 8px;
     margin-bottom: 16px;
   }
+`;
+
+export const ButtonRow = styled.div`
+  margin-top: 24px;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
 `;

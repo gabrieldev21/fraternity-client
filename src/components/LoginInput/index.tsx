@@ -1,25 +1,26 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/display-name */
+
 import React, { useRef } from 'react';
 import * as S from './styleds';
-import { LoginInputProps } from './types';
+import { InputProps } from './types';
 
-const LoginInput: React.FC<LoginInputProps> = ({ name, id, className, label, icon, type = 'text', error }) => {
-  const inputRef = useRef<HTMLInputElement>(null);
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ name, id, label, icon, type = 'text', error, ...others }, ref) => {
+    const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleClick = () => {
-    inputRef?.current?.focus();
-  };
+    return (
+      <S.Wrapper error={error}>
+        <S.ContainerInput>
+          <label htmlFor={id ?? name}>{label}</label>
+          <input ref={ref || inputRef} id={id ?? name} name={name} type={type} {...others} />
+        </S.ContainerInput>
+        <S.ErrorMessage>{error}</S.ErrorMessage>
+        {icon}
+      </S.Wrapper>
+    );
+  },
+);
 
-  return (
-    <S.Wrapper onClick={handleClick} error={error}>
-      <S.ContainerInput>
-        <label htmlFor={id ?? name}>{label}</label>
-        <input ref={inputRef} type={type} id={id ?? name} name={name} className={className} />
-      </S.ContainerInput>
-      <S.ErrorMessage>{error}</S.ErrorMessage>
-      {icon}
-    </S.Wrapper>
-  );
-};
-
-export default LoginInput;
+export default Input;
