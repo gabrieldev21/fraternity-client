@@ -50,6 +50,9 @@ export const LinkStyled = styled(Link)`
   text-decoration: none;
   color: hsl(210deg 66% 33%);
   font-weight: 600;
+  &:hover {
+    color: #1c90f4;
+  }
 `;
 export const Subtitle = styled.h2`
   color: #727b88;
@@ -63,6 +66,26 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   margin-left: 40px;
+  margin-right: 40px;
   position: relative;
   z-index: 1;
+`;
+
+export const FormWrapper = styled.div`
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+`;
+
+export const FormRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  & > * {
+    flex: 1;
+    margin-right: 8px;
+    margin-bottom: 16px;
+  }
 `;
