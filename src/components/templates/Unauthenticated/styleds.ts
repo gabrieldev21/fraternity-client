@@ -56,6 +56,15 @@ export const Subtitle = styled.h2`
 `;
 
 export const Container = styled.div`
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  animation: fadein 0.8s;
   height: 100vh;
   display: flex;
   justify-content: center;
