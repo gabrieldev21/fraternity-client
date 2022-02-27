@@ -1,6 +1,11 @@
 {
-    "header": {
-        "wishlist": "Lista de desejos",
+    "input": {
+        "name": "Nome",
+        "email": "E-mail",
+        "password": "Senha",
+        "phone": "Telefone"
+    },
+    "button": {
         "signin": "Entrar",
         "searchPlaceholder": "O que você está buscando?"
     },

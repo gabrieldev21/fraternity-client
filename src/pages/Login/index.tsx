@@ -1,13 +1,16 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
-import { MdPerson, MdLockOutline } from 'react-icons/md';
+import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { MdPerson, MdLockOutline } from 'react-icons/md';
+import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 
 import useTheme from 'hooks/useTheme';
 import { TextInput, LoadingLogo, Button } from 'components/';
-import * as S from './styleds';
+import { authentication } from 'store/modules/user';
+import { DispatchType } from 'store/modules/types';
 import LoginSchema from './LoginSchema';
+import * as S from './styleds';
 
 type LoginForm = {
   email: string,
@@ -19,15 +22,18 @@ const Login = () => {
     mode: 'onBlur',
     resolver: LoginSchema,
   });
-  const [loading, setLoading] = useState(false);
+  const history = useHistory();
+  const dispatch: DispatchType = useDispatch();
   const theme = useTheme();
+  const { t } = useTranslation();
+  const [loading, setLoading] = useState(false);
 
-  const onSubmit = () => {
-    // TODO: Integrate with api
+  const onSubmit = async (data: LoginForm) => {
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
+    const success = await dispatch(authentication(data));
+    setLoading(false);
+    if (!success) return;
+    history.replace('/');
   };
 
   return (
@@ -43,7 +49,7 @@ const Login = () => {
               error={formState.errors.email?.message}
               color={theme.colors.white}
               type="email"
-              label="E-mail"
+              label={t('input.email')}
               icon={MdPerson}
             />
             <TextInput
@@ -51,10 +57,10 @@ const Login = () => {
               error={formState.errors.password?.message}
               color={theme.colors.white}
               type="password"
-              label="Senha"
+              label={t('input.password')}
               icon={MdLockOutline}
             />
-            <Button type="submit">Entrar</Button>
+            <Button type="submit">{t('button.signin')}</Button>
           </S.Fade>
         )}
       </S.CardContainer>

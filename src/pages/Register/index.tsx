@@ -26,12 +26,13 @@ type RegisterForm = {
 };
 
 const Register = () => {
+  const [loading, setLoading] = useState(false);
   const { register, handleSubmit, formState } = useForm<RegisterForm>({
     mode: 'onChange',
     resolver: RegisterSchema,
   });
+
   const { t } = useTranslation();
-  const [loading, setLoading] = useState(false);
 
   //  TODO: Integrate with api
   const onSubmit = (data: RegisterForm) => {

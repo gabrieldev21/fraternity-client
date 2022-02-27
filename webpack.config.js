@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  target: ['web', 'es5'],
   stats: 'minimal',
   entry: { main: './src/index.tsx' },
   output: {
