@@ -6,27 +6,27 @@ export const Wrapper =
   WrapperProps >
   `
   position: relative;
-  background-color: hsl(227deg 16% 23%);
+  background-color: ${({ theme }) => theme.colors.input.background};
   padding: 16px 24px;
   padding-top: 16px;
   border-radius: 8px;
   display: flex;
   align-items: center;
-  border: 1px solid ${(props) => (props.error ? props.theme.colors.error : 'hsl(227deg 16% 23%)')};
+  border: 1px solid ${({ error, theme }) => (error ? theme.colors.error : theme.colors.input.background)};
   svg {
-    color: ${(props) => (props.error ? props.theme.colors.error : '#fff')};
+    color: ${({ error, theme }) => (error ? theme.colors.error : theme.colors.textMain)};
   }
   label{
-    color: ${(props) => (props.error ? props.theme.colors.error : '#727b88')};
+    color: ${({ error, theme }) => (error ? theme.colors.error : theme.colors.textSecondary)};
   }
   &:focus-within {
-    background-color: #3d404a;
-    border-color: #1c90f4;
+    background-color: ${({ theme }) => theme.colors.input.backgroundSecondary};
+    border-color: ${({ theme }) => theme.colors.main};
     label {
-      color: #1c90f4;
+      color: ${({ theme }) => theme.colors.main};
     }
     svg {
-      color: #1c90f4;
+      color: ${({ theme }) => theme.colors.main};
     }
   }
 `;
@@ -43,7 +43,7 @@ export const ContainerInput = styled.div`
     outline: 0;
     background-color: transparent;
     border: none;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.textMain};
     font-weight: 600;
     font-size: 16px;
     padding: 0;

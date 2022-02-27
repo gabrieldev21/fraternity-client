@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { MdPerson, MdLockOutline } from 'react-icons/md';
+import { BsFillEyeFill } from 'react-icons/bs';
+import { MdEmail } from 'react-icons/md';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 
@@ -13,11 +14,9 @@ import Unauthenticated, {
   FormRow,
   ButtonRow,
 } from 'components/templates/Unauthenticated';
-import useTheme from 'hooks/useTheme';
 import Button from 'components/Button';
 import Input from 'components/Input';
 import { authentication } from 'store/modules/user';
-import { DispatchType } from 'store/modules/types';
 import LoginSchema from './LoginSchema';
 
 type LoginForm = {
@@ -31,8 +30,7 @@ const Login = () => {
     resolver: LoginSchema,
   });
   const history = useHistory();
-  const dispatch: DispatchType = useDispatch();
-  const theme = useTheme();
+  const dispatch = useDispatch();
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
 
@@ -56,9 +54,8 @@ const Login = () => {
             {...register('email')}
             error={t(formState.errors.email?.message || '')}
             label={t('login.form.email.label')}
-            color={theme.colors.white}
             type="email"
-            icon={MdPerson}
+            icon={<MdEmail />}
           />
         </FormRow>
         <FormRow>
@@ -66,9 +63,8 @@ const Login = () => {
             {...register('password')}
             error={t(formState.errors.password?.message || '')}
             label={t('login.form.password.label')}
-            color={theme.colors.white}
             type="password"
-            icon={MdLockOutline}
+            icon={<BsFillEyeFill />}
           />
         </FormRow>
         <ButtonRow>

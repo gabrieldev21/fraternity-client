@@ -5,7 +5,7 @@ import imageSrc from 'assets/images/background-enter.jpg';
 import LogoSVG from 'components/Logo';
 
 export const Wrapper = styled.div`
-  background-color: hsl(232deg 16% 19%);
+  background-color: ${({ theme }) => theme.colors.background};
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -16,14 +16,8 @@ export const CutImage = styled.div`
   width: 100vw;
   height: 100vh;
   position: absolute;
-  background-color: hsl(232deg 16% 19%);
-  background: rgb(41, 45, 56);
-  background: linear-gradient(
-    45deg,
-    rgba(41, 45, 56, 1) 0%,
-    rgba(41, 43, 56, 1) 65%,
-    rgba(41, 43, 56, 0.5979342420561975) 100%
-  );
+  background-color: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.backgroundGradient};
 `;
 
 export const Image = styled.img.attrs({ src: imageSrc })`
@@ -33,14 +27,15 @@ export const Image = styled.img.attrs({ src: imageSrc })`
   filter: blur(1px);
 `;
 
-export const Logo = styled(LogoSVG).attrs({ color: '#FFF' })`
+export const Logo = styled(LogoSVG)`
+  fill: ${({ theme }) => theme.colors.textMain};
   position: absolute;
   bottom: 10px;
   right: 10px;
 `;
 
 export const Title = styled.h1`
-  color: #fff;
+  color: ${({ theme }) => theme.colors.textMain};
   font-size: 3rem;
   margin: 0;
 `;
@@ -48,14 +43,14 @@ export const Title = styled.h1`
 export const LinkStyled = styled(Link)`
   font-size: 24px;
   text-decoration: none;
-  color: hsl(210deg 66% 33%);
+  color: ${({ theme }) => theme.colors.mainLight};
   font-weight: 600;
   &:hover {
-    color: #1c90f4;
+    color: ${({ theme }) => theme.colors.main};
   }
 `;
 export const Subtitle = styled.h2`
-  color: #727b88;
+  color: ${({ theme }) => theme.colors.textSecondary};
   font-size: 24px;
   font-weight: normal;
 `;
