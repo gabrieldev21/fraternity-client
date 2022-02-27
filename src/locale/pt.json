@@ -1,14 +1,4 @@
 {
-    "input": {
-        "name": "Nome",
-        "email": "E-mail",
-        "password": "Senha",
-        "phone": "Telefone"
-    },
-    "button": {
-        "signin": "Entrar",
-        "searchPlaceholder": "O que você está buscando?"
-    },
     "signup": {
         "title": "Criar nova conta.",
         "subtitle": "Já é um membro?",
@@ -41,5 +31,26 @@
             }
         },
         "buttonSubmit": "Criar conta"
+    },
+    "login": {
+        "title": "Entrar",
+        "subtitle": "Não possui uma conta?",
+        "subtitleLink": "Cadastre-se",
+        "form": {
+            "email": {
+                "label": "E-mail",
+                "errors": {
+                    "required": "Campo obrigatório",
+                    "invalid": "E-mail inválido"
+                }
+            },
+            "password": {
+                "label": "Senha",
+                "errors": {
+                    "required": "Campo obrigatório"
+                }
+            }
+        },
+        "buttonSubmit": "Entrar"
     }
 }

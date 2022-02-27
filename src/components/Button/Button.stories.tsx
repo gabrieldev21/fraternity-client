@@ -2,22 +2,25 @@ import React from 'react';
 import Button from '.';
 
 export default {
-  title: 'Button',
+  title: 'LoginButton',
   component: Button,
 };
 
 export const ButtonPrimary = () => (
   <div
     style={{
-      background: '#282828',
+      background: 'rgb(41, 45, 56)',
       width: 300,
       height: 300,
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      flexDirection: 'column',
       padding: 100,
     }}
   >
-    <Button>Primary</Button>
+    <Button>Create account</Button>
+    <br />
+    <Button disabled>Disabled Button</Button>
   </div>
 );

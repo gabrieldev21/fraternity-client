@@ -6,8 +6,8 @@ import { BsPersonLinesFill, BsFillEyeFill } from 'react-icons/bs';
 import { MdEmail } from 'react-icons/md';
 import { useTranslation } from 'react-i18next';
 
-import Input from 'components/LoginInput';
-import Button from 'components/LoginButton';
+import Input from 'components/Input';
+import Button from 'components/Button';
 import Unauthenticated, {
   Title,
   Subtitle,
