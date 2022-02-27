@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ButtonStyled = styled.button`
+const Button = styled.button`
   border: none;
   cursor: pointer;
   color: ${(props) => props.theme.colors.white};
@@ -20,4 +20,4 @@ const ButtonStyled = styled.button`
   }
 `;
 
-export default ButtonStyled;
+export default Button;
