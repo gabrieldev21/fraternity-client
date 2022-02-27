@@ -7,6 +7,16 @@ const Portal: React.FC = ({ children }) => {
 };
 
 const Overload = styled.div`
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  animation: fadein 2s;
+
   position: absolute;
   top: 0;
   width: 100vw;
