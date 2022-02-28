@@ -10,7 +10,5 @@ export default createReducer(initialState, {
     ...state,
     token: action.payload?.token,
   }),
-  [LOGOUT_USER]: () => ({
-    ...initialState,
-  }),
+  [LOGOUT_USER]: () => ({}),
 });
