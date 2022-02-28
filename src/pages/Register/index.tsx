@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
+import api from 'utils/api';
 import useTheme from 'hooks/useTheme';
 import { TextInput, LoadingLogo, Button } from 'components/';
 import * as S from './styleds';
@@ -24,12 +25,11 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   const { t } = useTranslation();
 
-  const onSubmit = () => {
-    //  TODO: Integrate with api
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
+  const onSubmit = async (data: RegisterForm) => {
+    try {
+      await api.post('user/', data);
+    } catch (error) {}
+    alert('Tá cadastrado negão');
   };
 
   return (
