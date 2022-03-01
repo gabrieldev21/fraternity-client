@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable prettier/prettier */
 declare module '*.svg' {
-  const content: unknown;
+  const content: any;
   export default content;
 }
 
@@ -8,11 +9,11 @@ declare const IS_PRODUCTION: boolean;
 declare const VERSION: string;
 
 declare module '*.png' {
-  const content: unknown;
+  const content: any;
   export default content;
 }
 
 declare module '*.jpg' {
-  const content: unknown;
+  const content: any;
   export default content;
 }
