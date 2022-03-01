@@ -16,7 +16,7 @@ const Unauthenticated: React.FC<UnauthenticatedProps> = ({ loading, children }) 
       <S.Logo />
       <S.Container>{children}</S.Container>
       {loading && (
-        <Modal>
+        <Modal data-testid="loading">
           <Loading />
         </Modal>
       )}
