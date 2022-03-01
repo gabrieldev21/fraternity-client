@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable prettier/prettier */
 declare module '*.ttf' {
-  const content: unknown;
+  const content: any;
   export default content;
 }
 
