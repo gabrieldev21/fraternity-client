@@ -2,27 +2,37 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { BsPersonLinesFill, BsFillEyeFill } from 'react-icons/bs';
+import { MdEmail } from 'react-icons/md';
 import { useTranslation } from 'react-i18next';
 
 import api from 'utils/api';
-import useTheme from 'hooks/useTheme';
-import { TextInput, LoadingLogo, Button } from 'components/';
-import * as S from './styleds';
+import Input from 'components/Input';
+import Button from 'components/Button';
+import Unauthenticated, {
+  Title,
+  Subtitle,
+  LinkStyled,
+  FormWrapper,
+  FormRow,
+  ButtonRow,
+} from 'components/templates/Unauthenticated';
 import RegisterSchema from './RegisterSchema';
 
 type RegisterForm = {
-  name: string,
+  firstName: string,
+  lastName: string,
   email: string,
   password: string,
 };
 
 const Register = () => {
+  const [loading, setLoading] = useState(false);
   const { register, handleSubmit, formState } = useForm<RegisterForm>({
-    mode: 'onBlur',
+    mode: 'onChange',
     resolver: RegisterSchema,
   });
-  const theme = useTheme();
-  const [loading, setLoading] = useState(false);
+
   const { t } = useTranslation();
 
   const onSubmit = async (data: RegisterForm) => {
@@ -33,39 +43,51 @@ const Register = () => {
   };
 
   return (
-    <S.Wrapper>
-      <S.CardContainer as="form" onSubmit={handleSubmit(onSubmit)}>
-        {loading ? (
-          <LoadingLogo />
-        ) : (
-          <S.Fade>
-            <S.LogoTransparent />
-            <TextInput
-              {...register('name')}
-              error={formState.errors.name?.message}
-              color={theme.colors.white}
-              type="name"
-              label={t('input.name')}
-            />
-            <TextInput
-              {...register('password')}
-              error={formState.errors.password?.message}
-              color={theme.colors.white}
-              type="password"
-              label={t('input.password')}
-            />
-            <TextInput
-              {...register('email')}
-              error={formState.errors.email?.message}
-              color={theme.colors.white}
-              type="email"
-              label={t('input.email')}
-            />
-            <Button>{t('button.signup')}</Button>
-          </S.Fade>
-        )}
-      </S.CardContainer>
-    </S.Wrapper>
+    <Unauthenticated loading={loading}>
+      <Title>{t('signup.title')}</Title>
+      <Subtitle>
+        {t('signup.subtitle')} <LinkStyled to="/login">{t('signup.subtitleLink')}</LinkStyled>
+      </Subtitle>
+      <FormWrapper as="form" onSubmit={handleSubmit(onSubmit)}>
+        <FormRow>
+          <Input
+            {...register('firstName')}
+            error={t(formState.errors.firstName?.message || '')}
+            label={t('signup.form.firstName.label')}
+            icon={<BsPersonLinesFill />}
+          />
+          <Input
+            {...register('lastName')}
+            error={t(formState.errors.lastName?.message || '')}
+            label={t('signup.form.lastName.label')}
+            icon={<BsPersonLinesFill />}
+          />
+        </FormRow>
+        <FormRow>
+          <Input
+            {...register('email')}
+            error={t(formState.errors.email?.message || '')}
+            label={t('signup.form.email.label')}
+            type="email"
+            icon={<MdEmail />}
+          />
+        </FormRow>
+        <FormRow>
+          <Input
+            {...register('password')}
+            error={t(formState.errors.password?.message || '')}
+            label={t('signup.form.password.label')}
+            type="password"
+            icon={<BsFillEyeFill />}
+          />
+        </FormRow>
+        <ButtonRow>
+          <Button disabled={!formState.isValid} type="submit">
+            {t('signup.buttonSubmit')}
+          </Button>
+        </ButtonRow>
+      </FormWrapper>
+    </Unauthenticated>
   );
 };
 

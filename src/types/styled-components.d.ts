@@ -1,19 +1,20 @@
 import 'styled-components';
 
 declare module 'styled-components' {
+  // eslint-disable-next-line prettier/prettier
   export interface DefaultTheme {
-    size: {
-      iconHeader: string;
-      titleText: string;
-    };
     colors: {
-      main: string;
-      dark: string;
-      light: string;
-      white: string;
-      orange: string;
-      orangelight: string;
+      background: string;
+      backgroundGradient: string;
       error: string;
+      main: string;
+      mainLight: string;
+      textMain: string;
+      textSecondary: string;
+      input: {
+        background: string;
+        backgroundSecondary: string;
+      }
     };
   }
 }
