@@ -1,6 +1,6 @@
 module.exports = {
   verbose: true,
-  setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/jest-setup.ts', 'jest-canvas-mock'],
   moduleNameMapper: {
     '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/__mocks__/fileMock.js',
@@ -12,4 +12,5 @@ module.exports = {
     '^pages(.*)$': '<rootDir>/src/pages$1',
     '^assets(.*)$': '<rootDir>/src/assets$1',
   },
+  testPathIgnorePatterns: ['/node_modules/(?!my-package)(.*)'],
 };
