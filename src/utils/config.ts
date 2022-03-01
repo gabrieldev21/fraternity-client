@@ -1,1 +1,1 @@
-export const baseUrl = 'https://fraternity.herokuapp.com/v1/';
+export const baseUrl = process.env.baseUrl ?? '';

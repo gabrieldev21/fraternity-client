@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   target: ['web', 'es5'],
@@ -17,7 +18,12 @@ module.exports = {
     port: 7000,
     open: true,
   },
-  plugins: [new HtmlWebpackPlugin({ template: './public/index.html' })],
+  plugins: [
+    new HtmlWebpackPlugin({ template: './public/index.html' }),
+    new Dotenv({
+      path: `./.env.${process?.env?.NODE_ENV}`,
+    }),
+  ],
   module: {
     rules: [
       {
