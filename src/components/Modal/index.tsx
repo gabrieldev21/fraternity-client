@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 
@@ -28,10 +28,10 @@ const Overload = styled.div`
   z-index: 1;
 `;
 
-const Modal: React.FC = ({ children }) => {
+const Modal: React.FC<HTMLAttributes<HTMLDivElement>> = (props) => {
   return (
     <Portal>
-      <Overload>{children}</Overload>
+      <Overload {...props} />
     </Portal>
   );
 };
