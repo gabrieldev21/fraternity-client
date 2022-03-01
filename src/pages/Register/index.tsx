@@ -4,7 +4,9 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { BsPersonLinesFill, BsFillEyeFill } from 'react-icons/bs';
 import { MdEmail } from 'react-icons/md';
+import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 
 import api from 'utils/api';
 import Input from 'components/Input';
@@ -28,18 +30,30 @@ type RegisterForm = {
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
-  const { register, handleSubmit, formState } = useForm<RegisterForm>({
+  const { register, handleSubmit, formState, setError } = useForm<RegisterForm>({
     mode: 'onChange',
     resolver: RegisterSchema,
   });
-
+  const history = useHistory();
   const { t } = useTranslation();
 
   const onSubmit = async (data: RegisterForm) => {
+    setLoading(true);
     try {
-      await api.post('user/', data);
-    } catch (error) {}
-    alert('Tá cadastrado negão');
+      await api.post('user', data);
+      history.replace('/login');
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        const responseMessageError = error.response?.data.errors;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        Object.keys(responseMessageError).forEach((errorKey: any) => {
+          setError(errorKey, {
+            message: responseMessageError[errorKey].message,
+          });
+        });
+      }
+      setLoading(false);
+    }
   };
 
   return (
