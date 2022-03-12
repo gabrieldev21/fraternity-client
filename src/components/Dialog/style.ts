@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 
 export const DialogText = styled.div`
+  display: flex;
+  align-self: flex-end;
   font-size: 1.3rem;
-  margin-top: 8px;
-  margin-bottom: 10px;
   text-align: center;
+  color: ${({ theme }) => theme.colors.textMain};
+`;
+
+export const CloseModal = styled.div`
+  flex: none;
+  flex-direction: row-reverse;
+  font-size: 1.3rem;
   color: ${({ theme }) => theme.colors.textMain};
 `;
 
@@ -12,11 +19,9 @@ export const DialogButton = styled.button`
   border: none;
   cursor: pointer;
   color: ${({ theme }) => theme.colors.textMain};
-  background-color: ${({ theme }) => theme.colors.main};
+  background-color: ${({ theme }) => theme.colors.textSecondary};
   border-radius: 12px;
   padding: 8px 24px;
-  margin-top: 32px;
-  margin-bottom: 6px;
   transition: all 0.4s ease-out;
   font-size: 16px;
   &:hover {
@@ -33,6 +38,8 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  .CloseModal {
+    display: flex;
+    align-self: flex-end;
+  }
 `;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Modal from '../Modal';
 
-import { Container, DialogButton, DialogText } from './style';
+import { Container, DialogButton, DialogText, CloseModal } from './style';
 
 export interface DialogModal {
   message: string;
@@ -20,6 +20,7 @@ const Dialog = ({ message }: DialogModal) => {
       }}
     >
       <Container>
+        <CloseModal>X</CloseModal>
         <DialogText>{message}</DialogText>
         <DialogButton>Ok</DialogButton>
       </Container>
