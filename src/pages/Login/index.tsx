@@ -42,11 +42,15 @@ const Login = () => {
     history.replace('/');
   };
 
+  const onCancel = () => {
+    history.push('/');
+  };
+
   return (
     <Unauthenticated loading={loading}>
       <Title>{t('login.title')}</Title>
       <Subtitle>
-        {t('login.subtitle')} <LinkStyled to="/register">{t('login.subtitleLink')}</LinkStyled>
+        {t('login.subtitle')} <LinkStyled to="/forgot-password">{t('login.subtitleLink')}</LinkStyled>
       </Subtitle>
       <FormWrapper as="form" onSubmit={handleSubmit(onSubmit)}>
         <FormRow>
@@ -68,6 +72,9 @@ const Login = () => {
           />
         </FormRow>
         <ButtonRow>
+          <Button variant="secondary" onClick={onCancel} type="button">
+            {t('login.buttonCancel')}
+          </Button>
           <Button disabled={!formState.isValid} type="submit">
             {t('login.buttonSubmit')}
           </Button>

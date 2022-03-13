@@ -1,0 +1,33 @@
+{
+    "title": "Criar nova conta.",
+    "subtitle": "Já é um membro?",
+    "subtitleLink": "Conecte-se",
+    "form": {
+        "firstName": {
+            "label": "Nome",
+            "errors": {
+                "required": "Campo obrigatório"
+            }
+        },
+        "lastName": {
+            "label": "Sobrenome",
+            "errors": {
+                "required": "Campo obrigatório"
+            }
+        },
+        "email": {
+            "label": "E-mail",
+            "errors": {
+                "required": "Campo obrigatório",
+                "invalid": "E-mail inválido"
+            }
+        },
+        "password": {
+            "label": "Senha",
+            "errors": {
+                "required": "Campo obrigatório"
+            }
+        }
+    },
+    "buttonSubmit": "Criar conta"
+}

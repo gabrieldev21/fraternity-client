@@ -11,7 +11,11 @@ describe('<Button />', () => {
   });
   it('Should render disabled button', () => {
     const textChildren = 'TEST_BUTTON_CHILDREN';
-    renderWithProviders(<Button disabled>{textChildren}</Button>);
+    renderWithProviders(
+      <Button variant="secondary" disabled>
+        {textChildren}
+      </Button>,
+    );
     expect(screen.getByRole('button', { name: textChildren })).toBeDisabled();
   });
 });
