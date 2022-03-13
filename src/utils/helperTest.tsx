@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { MemoryRouter } from 'react-router-dom';
 import i18n from 'i18next';
 import theme from 'utils/theme';
-import translation from '../locale/pt.json';
+import translation from '../locale/pt';
 
 i18n.use(initReactI18next).init({
   resources: { pt: { translation } },

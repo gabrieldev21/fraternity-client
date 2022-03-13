@@ -1,0 +1,22 @@
+{
+    "title": "Entrar",
+    "subtitle": "Esqueceu sua senha?",
+    "subtitleLink": "Recupere-a",
+    "form": {
+        "email": {
+            "label": "E-mail",
+            "errors": {
+                "required": "Campo obrigatório",
+                "invalid": "E-mail inválido"
+            }
+        },
+        "password": {
+            "label": "Senha",
+            "errors": {
+                "required": "Campo obrigatório"
+            }
+        }
+    },
+    "buttonSubmit": "Entrar",
+    "buttonCancel": "Cadastrar"
+}
