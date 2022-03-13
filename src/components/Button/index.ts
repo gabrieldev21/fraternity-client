@@ -18,7 +18,7 @@ const primary = css`
 
 const secondary = css`
   background-color: transparent;
-  border: 1px solid #fff;
+  border: 1px solid ${({ theme }) => theme.colors.textMain};
   color: ${({ theme }) => theme.colors.textMain};
   &:hover {
     background-color: ${({ theme }) => theme.colors.main};
