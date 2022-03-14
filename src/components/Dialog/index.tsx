@@ -1,29 +1,26 @@
 import React from 'react';
 
-import Modal from '../Modal';
+import Modal from 'components/Modal';
 
-import { Container, DialogButton, DialogText, CloseModal } from './style';
+import { BsXLg } from 'react-icons/bs';
+import * as S from './styleds';
 
 export interface DialogModal {
-  message: string;
+  children: string;
 }
 
-const Dialog = ({ message }: DialogModal) => {
+const Dialog: React.FC<DialogModal> = ({ children }) => {
   return (
-    <Modal
-      style={{
-        width: 375,
-        height: 140,
-        borderRadius: 8,
-        position: 'relative',
-        margin: 'auto',
-      }}
-    >
-      <Container>
-        <CloseModal>X</CloseModal>
-        <DialogText>{message}</DialogText>
-        <DialogButton>Ok</DialogButton>
-      </Container>
+    <Modal>
+      <S.DialogModal>
+        <S.DialogCloseButton>
+          <BsXLg />
+        </S.DialogCloseButton>
+        <S.Container>
+          <S.DialogText>{children}</S.DialogText>
+          <S.DialogButton>Ok</S.DialogButton>
+        </S.Container>
+      </S.DialogModal>
     </Modal>
   );
 };

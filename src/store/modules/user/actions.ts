@@ -17,10 +17,8 @@ export const authentication =
       const { data } = await api.post<UserAuthResponse>('auth/token', { email, password });
       localStorage.setItem('user', JSON.stringify(data));
       dispatch(setUser(data));
-      console.log(data);
       return true;
     } catch (e) {
-      alert('Deu merda');
       return false;
     }
   };
