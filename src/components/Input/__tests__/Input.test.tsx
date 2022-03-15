@@ -1,5 +1,7 @@
 import { screen } from '@testing-library/dom';
 import React from 'react';
+import userEvent from '@testing-library/user-event';
+
 import { renderWithProviders } from 'utils/helperTest';
 import Input from '..';
 
@@ -18,5 +20,15 @@ describe('<Input />', () => {
     const icon = <span data-testid="icon-test">I</span>;
     renderWithProviders(<Input error={errorMessage} label={textLabel} icon={icon} />);
     expect(screen.getByText(errorMessage)).toBeInTheDocument();
+  });
+
+  it('Should render input with icon to change password for text', () => {
+    renderWithProviders(<Input name="password" label="password" type="password" />);
+    const input = screen.getByLabelText('password');
+    expect(input).toHaveAttribute('type', 'password');
+    userEvent.click(screen.getByRole('button'));
+    expect(input).toHaveAttribute('type', 'text');
+    userEvent.click(screen.getByRole('button'));
+    expect(input).toHaveAttribute('type', 'password');
   });
 });

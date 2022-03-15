@@ -35,7 +35,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <input ref={ref} id={id ?? name} name={name} type={isPassword && showPassword ? 'text' : type} {...others} />
         </S.ContainerInput>
         <S.ErrorMessage>{error}</S.ErrorMessage>
-        <S.IconContainer onClick={handleClickIcon}>{renderIcon}</S.IconContainer>
+        <S.IconContainer role="button" onClick={handleClickIcon}>
+          {renderIcon}
+        </S.IconContainer>
       </S.Wrapper>
     );
   },
