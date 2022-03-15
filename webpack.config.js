@@ -13,7 +13,9 @@ module.exports = {
     publicPath: '/',
   },
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: {
+      disableDotRule: true,
+    },
     compress: true,
     port: 7000,
     open: true,

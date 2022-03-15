@@ -9,7 +9,7 @@ import { Provider as ReduxProvider } from 'react-redux';
 import store from 'store/';
 import theme from 'utils/theme';
 import GlobalStyle from 'components/Fonts';
-import translation from './locale/pt.json';
+import translation from './locale/pt';
 import Routes from './Routes';
 
 i18n.use(initReactI18next).init({

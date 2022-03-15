@@ -96,7 +96,11 @@ export const FormRow = styled.div`
 export const ButtonRow = styled.div`
   margin-top: 24px;
   width: 100%;
-  max-width: 300px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  * {
+    width: 280px;
+    margin-right: 16px;
+  }
 `;
