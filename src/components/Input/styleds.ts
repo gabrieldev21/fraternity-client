@@ -56,3 +56,7 @@ export const ErrorMessage = styled.span`
   bottom: 8px;
   font-size: 12px;
 `;
+
+export const IconContainer = styled.div`
+  cursor: pointer;
+`;

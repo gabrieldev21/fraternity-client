@@ -22,12 +22,12 @@ export const Inputs = () => (
       flexDirection: 'column',
     }}
   >
-    <Input type="text" label="Full name" icon={<BsPersonLinesFill />} />
+    <Input type="text" name="name" label="Full name" icon={<BsPersonLinesFill />} />
     <br />
     <br />
-    <Input type="password" label="Password" icon={<BsFillEyeFill />} />
+    <Input type="password" name="password" label="Password" icon={<BsFillEyeFill />} />
     <br />
     <br />
-    <Input type="email" label="Email" error="Error message" icon={<MdEmail />} />
+    <Input type="email" name="email" label="Email" error="Error message" icon={<MdEmail />} />
   </div>
 );
