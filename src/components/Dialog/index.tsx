@@ -1,16 +1,11 @@
 import React from 'react';
+import { BsXLg } from 'react-icons/bs';
 
 import Modal from 'components/Modal';
-
-import { BsXLg } from 'react-icons/bs';
+import { DialogModal } from './types';
 import * as S from './styleds';
 
-export interface DialogModal {
-  width?: string;
-  textConfirm: string;
-}
-
-const Dialog: React.FC<DialogModal> = ({ children, textConfirm, width }) => {
+const Dialog: React.FC<DialogModal> = ({ children, textConfirm, width = '600px' }) => {
   return (
     <Modal>
       <S.DialogModal width={width}>
@@ -25,7 +20,5 @@ const Dialog: React.FC<DialogModal> = ({ children, textConfirm, width }) => {
     </Modal>
   );
 };
-
-Dialog.defaultProps = { width: '600px' };
 
 export default Dialog;

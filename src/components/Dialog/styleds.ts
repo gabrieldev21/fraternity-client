@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 
 import Button from 'components/Button';
-
-interface IDialogModal {
-  width: string;
-}
+import { IDialogModal } from './types';
 
 export const DialogCloseButton = styled.div`
   cursor: pointer;
