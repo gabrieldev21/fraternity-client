@@ -41,6 +41,7 @@ const Button =
   padding: 24px 40px;
   transition: all 0.4s ease-out;
   font-size: 16px;
+  font-weight: 600;
  ${(props) => props.variant === 'primary' && primary}
  ${(props) => props.variant === 'secondary' && secondary}
 `;
