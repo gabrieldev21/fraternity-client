@@ -20,7 +20,9 @@ export const Modal = () => (
       width: '100vw',
     }}
   >
-    <Dialog>Algo de errado não está certo</Dialog>
+    <Dialog textConfirm="Aceitar" width="700px">
+      <p style={{ textAlign: 'center' }}>Algo de errado não está certo programador cu de apito</p>
+    </Dialog>
     <Button>abrir</Button>
   </div>
 );

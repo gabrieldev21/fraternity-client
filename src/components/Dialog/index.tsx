@@ -6,23 +6,26 @@ import { BsXLg } from 'react-icons/bs';
 import * as S from './styleds';
 
 export interface DialogModal {
-  children: string;
+  width?: string;
+  textConfirm: string;
 }
 
-const Dialog: React.FC<DialogModal> = ({ children }) => {
+const Dialog: React.FC<DialogModal> = ({ children, textConfirm, width }) => {
   return (
     <Modal>
-      <S.DialogModal>
+      <S.DialogModal width={width}>
         <S.DialogCloseButton>
           <BsXLg />
         </S.DialogCloseButton>
         <S.Container>
           <S.DialogText>{children}</S.DialogText>
-          <S.DialogButton>Ok</S.DialogButton>
+          <S.DialogButton>{textConfirm}</S.DialogButton>
         </S.Container>
       </S.DialogModal>
     </Modal>
   );
 };
+
+Dialog.defaultProps = { width: '600px' };
 
 export default Dialog;

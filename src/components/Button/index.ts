@@ -9,6 +9,7 @@ const Button = styled.button`
   padding: 24px 40px;
   transition: all 0.4s ease-out;
   font-size: 16px;
+  font-weight: 600;
   &:hover {
     background-color: ${({ theme }) => theme.colors.mainLight};
   }
