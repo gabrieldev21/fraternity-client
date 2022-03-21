@@ -9,7 +9,7 @@ const Dialog: React.FC<DialogModal> = ({ children, textConfirm, width = '600px' 
   return (
     <Modal>
       <S.DialogModal width={width}>
-        <S.DialogCloseButton>
+        <S.DialogCloseButton name="closeButton">
           <BsXLg />
         </S.DialogCloseButton>
         <S.Container>

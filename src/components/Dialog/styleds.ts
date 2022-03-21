@@ -3,12 +3,14 @@ import styled from 'styled-components';
 import Button from 'components/Button';
 import { IDialogModal } from './types';
 
-export const DialogCloseButton = styled.div`
+export const DialogCloseButton = styled.button`
   cursor: pointer;
+  background-color: transparent;
+  border: none;
   color: ${({ theme }) => theme.colors.textMain};
-  position: absolute;
   padding: 2px;
   border-radius: 6px;
+  position: absolute;
   top: 12px;
   right: 12px;
   &:hover {
