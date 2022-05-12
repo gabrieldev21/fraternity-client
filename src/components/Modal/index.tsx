@@ -15,7 +15,7 @@ const Overload = styled.div`
       opacity: 1;
     }
   }
-  animation: fadein 2s;
+  animation: fadein 1s;
 
   position: absolute;
   top: 0;

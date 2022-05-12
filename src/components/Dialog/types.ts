@@ -1,6 +1,8 @@
-export interface DialogModal {
+export interface IDialog {
+  onClose: () => void;
+  isOpen: boolean;
   width?: string;
-  textConfirm: string;
+  hideCloseButton?: boolean;
 }
 
 export interface IDialogModal {
