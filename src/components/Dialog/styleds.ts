@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import Button from 'components/Button';
 import { IDialogModal } from './types';
 
 export const DialogCloseButton = styled.button`
@@ -29,14 +28,6 @@ export const DialogModal =
   position: relative;
   background-color: ${({ theme }) => theme.colors.input.backgroundSecondary};
 `;
-
-export const DialogText = styled.div`
-  margin-top: 6px;
-  font-size: 1.4rem;
-  color: ${({ theme }) => theme.colors.textMain};
-`;
-
-export const DialogButton = styled(Button)``;
 
 export const Container = styled.div`
   gap: 1.6rem;

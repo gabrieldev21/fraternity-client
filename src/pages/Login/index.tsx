@@ -18,11 +18,7 @@ import Button from 'components/Button';
 import Input from 'components/Input';
 import { authentication } from 'store/modules/user';
 import LoginSchema from './LoginSchema';
-
-type LoginForm = {
-  email: string,
-  password: string,
-};
+import { LoginForm } from './types';
 
 const Login = () => {
   const { register, handleSubmit, formState } = useForm<LoginForm>({

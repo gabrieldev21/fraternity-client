@@ -2,20 +2,23 @@ import React from 'react';
 import { BsXLg } from 'react-icons/bs';
 
 import Modal from 'components/Modal';
-import { DialogModal } from './types';
+import { IDialog } from './types';
 import * as S from './styleds';
 
-const Dialog: React.FC<DialogModal> = ({ children, textConfirm, width = '600px' }) => {
+const Dialog: React.FC<IDialog> = ({ onClose, isOpen, hideCloseButton = false, children, width = '600px' }) => {
+  if (!isOpen) {
+    return null;
+  }
+
   return (
     <Modal>
       <S.DialogModal width={width}>
-        <S.DialogCloseButton name="closeButton">
-          <BsXLg />
-        </S.DialogCloseButton>
-        <S.Container>
-          <S.DialogText>{children}</S.DialogText>
-          <S.DialogButton>{textConfirm}</S.DialogButton>
-        </S.Container>
+        {!hideCloseButton && (
+          <S.DialogCloseButton>
+            <BsXLg onClick={() => onClose()} />
+          </S.DialogCloseButton>
+        )}
+        <S.Container>{children}</S.Container>
       </S.DialogModal>
     </Modal>
   );
