@@ -9,7 +9,7 @@ describe('<Input />', () => {
   it('Should render input with label and Icon', () => {
     const textLabel = 'TEST_LABEL';
     const icon = <span data-testid="icon-test">I</span>;
-    renderWithProviders(<Input label={textLabel} icon={icon} />);
+    renderWithProviders(<Input name="test" label={textLabel} icon={icon} />);
     expect(screen.getByText(textLabel)).toBeInTheDocument();
     expect(screen.getByTestId('icon-test')).toBeInTheDocument();
   });
@@ -18,12 +18,12 @@ describe('<Input />', () => {
     const textLabel = 'TEST_LABEL';
     const errorMessage = 'Error message';
     const icon = <span data-testid="icon-test">I</span>;
-    renderWithProviders(<Input error={errorMessage} label={textLabel} icon={icon} />);
+    renderWithProviders(<Input name="test" error={errorMessage} label={textLabel} icon={icon} />);
     expect(screen.getByText(errorMessage)).toBeInTheDocument();
   });
 
   it('Should render input with icon to change password for text', () => {
-    renderWithProviders(<Input name="password" label="password" type="password" />);
+    renderWithProviders(<Input name="test" name="password" label="password" type="password" />);
     const input = screen.getByLabelText('password');
     expect(input).toHaveAttribute('type', 'password');
     userEvent.click(screen.getByRole('button'));
