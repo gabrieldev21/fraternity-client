@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import DatePicker from '.';
 
@@ -7,19 +7,23 @@ export default {
   component: DatePicker,
 };
 
-export const DatePickers = () => (
-  <div
-    style={{
-      background: 'rgb(41, 45, 56)',
-      width: 300,
-      height: 300,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 100,
-      flexDirection: 'column',
-    }}
-  >
-    <DatePicker name="date" label="Date" />
-  </div>
-);
+export const DatePickers = () => {
+  const [value, onChange] = useState<Date>();
+
+  return (
+    <div
+      style={{
+        background: 'rgb(41, 45, 56)',
+        width: 300,
+        height: 300,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 100,
+        flexDirection: 'column',
+      }}
+    >
+      <DatePicker value={value} name="date" label="Data de nascimento" onChange={onChange} />
+    </div>
+  );
+};
