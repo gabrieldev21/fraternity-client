@@ -19,7 +19,9 @@ import Unauthenticated, {
   FormRow,
   ButtonRow,
 } from 'components/templates/Unauthenticated';
+import Dialog from 'components/Dialog';
 import RegisterSchema from './RegisterSchema';
+import { ErrorButtonRegister, TextLoginError } from './styleds';
 
 type RegisterForm = {
   firstName: string,
@@ -36,6 +38,8 @@ const Register = () => {
   });
   const history = useHistory();
   const { t } = useTranslation();
+  const [openDialogRegisterError, setOpenDialogRegisterError] = useState(false);
+  const [messageError, setMessageError] = useState('');
 
   const onSubmit = async (data: RegisterForm) => {
     setLoading(true);
@@ -46,13 +50,15 @@ const Register = () => {
       if (axios.isAxiosError(error)) {
         const responseMessageError = error.response?.data.errors;
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        Object.keys(responseMessageError).forEach((errorKey: any) => {
+        Object.keys(responseMessageError || {}).forEach((errorKey: any) => {
           setError(errorKey, {
             message: responseMessageError[errorKey].message,
           });
+          setMessageError(responseMessageError[errorKey].message);
         });
       }
       setLoading(false);
+      setOpenDialogRegisterError(true);
     }
   };
 
@@ -95,6 +101,15 @@ const Register = () => {
             icon={<BsFillEyeFill />}
           />
         </FormRow>
+        <Dialog
+          isOpen={openDialogRegisterError}
+          onClose={() => setOpenDialogRegisterError(false)}
+          width="400px"
+          hideCloseButton
+        >
+          <TextLoginError>{messageError}</TextLoginError>
+          <ErrorButtonRegister onClick={() => setOpenDialogRegisterError(false)}>OK</ErrorButtonRegister>
+        </Dialog>
         <ButtonRow>
           <Button disabled={!formState.isValid} type="submit">
             {t('signup.buttonSubmit')}
