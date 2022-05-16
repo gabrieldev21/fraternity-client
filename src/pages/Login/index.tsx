@@ -78,7 +78,7 @@ const Login = () => {
           </StyledButton>
           <Dialog isOpen={openDialogError} onClose={() => setOpenDialogError(false)} width="400px" hideCloseButton>
             <TextLoginError>{t('login.error')}</TextLoginError>
-            <ErrorButton>OK</ErrorButton>
+            <ErrorButton onClick={() => setOpenDialogError(false)}>OK</ErrorButton>
           </Dialog>
           <StyledButton disabled={!formState.isValid} type="submit">
             {t('login.buttonSubmit')}
