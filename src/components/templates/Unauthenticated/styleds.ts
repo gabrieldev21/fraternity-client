@@ -101,6 +101,6 @@ export const ButtonRow = styled.div`
   justify-content: space-between;
   * {
     width: 280px;
-    margin-right: 16px;
+    margin: 16px;
   }
 `;
