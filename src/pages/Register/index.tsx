@@ -22,13 +22,7 @@ import Unauthenticated, {
 import Dialog from 'components/Dialog';
 import RegisterSchema from './RegisterSchema';
 import { ErrorButtonRegister, TextLoginError } from './styleds';
-
-type RegisterForm = {
-  firstName: string,
-  lastName: string,
-  email: string,
-  password: string,
-};
+import { RegisterForm } from './types';
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
@@ -39,6 +33,7 @@ const Register = () => {
   const history = useHistory();
   const { t } = useTranslation();
   const [openDialogRegisterError, setOpenDialogRegisterError] = useState(false);
+  const [messageError, setMessageError] = useState('');
 
   const onSubmit = async (data: RegisterForm) => {
     setLoading(true);
@@ -53,6 +48,7 @@ const Register = () => {
           setError(errorKey, {
             message: responseMessageError[errorKey].message,
           });
+          setMessageError(responseMessageError[errorKey].message);
         });
       }
       setLoading(false);
@@ -105,7 +101,7 @@ const Register = () => {
           width="400px"
           hideCloseButton
         >
-          <TextLoginError>{t('signup.error')}</TextLoginError>
+          <TextLoginError>{messageError}</TextLoginError>
           <ErrorButtonRegister onClick={() => setOpenDialogRegisterError(false)}>OK</ErrorButtonRegister>
         </Dialog>
         <ButtonRow>
