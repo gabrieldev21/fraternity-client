@@ -23,7 +23,7 @@ describe('<Input />', () => {
   });
 
   it('Should render input with icon to change password for text', () => {
-    renderWithProviders(<Input name="test" name="password" label="password" type="password" />);
+    renderWithProviders(<Input name="test" label="password" type="password" />);
     const input = screen.getByLabelText('password');
     expect(input).toHaveAttribute('type', 'password');
     userEvent.click(screen.getByRole('button'));
