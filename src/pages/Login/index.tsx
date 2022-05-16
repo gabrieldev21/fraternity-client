@@ -30,7 +30,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
-  const [openDialogError, setOpenDialogError] = useState(true);
+  const [openDialogError, setOpenDialogError] = useState(false);
 
   const onSubmit = async (data: LoginForm) => {
     setLoading(true);
