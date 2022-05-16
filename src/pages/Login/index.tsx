@@ -14,11 +14,12 @@ import Unauthenticated, {
   FormRow,
   ButtonRow,
 } from 'components/templates/Unauthenticated';
-import Button from 'components/Button';
 import Input from 'components/Input';
 import { authentication } from 'store/modules/user';
+import Dialog from 'components/Dialog';
 import LoginSchema from './LoginSchema';
 import { LoginForm } from './types';
+import { ErrorButton, StyledButton, TextLoginError } from './styleds';
 
 const Login = () => {
   const { register, handleSubmit, formState } = useForm<LoginForm>({
@@ -29,13 +30,17 @@ const Login = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
+  const [openDialogError, setOpenDialogError] = useState(false);
 
   const onSubmit = async (data: LoginForm) => {
     setLoading(true);
     const success = await dispatch(authentication(data));
     setLoading(false);
-    if (!success) return;
-    history.replace('/');
+    if (!success) {
+      setOpenDialogError(true);
+    } else {
+      history.replace('/');
+    }
   };
 
   const onCancel = () => {
@@ -68,12 +73,16 @@ const Login = () => {
           />
         </FormRow>
         <ButtonRow>
-          <Button variant="secondary" onClick={onCancel} type="button">
+          <StyledButton variant="secondary" onClick={onCancel} type="button">
             {t('login.buttonCancel')}
-          </Button>
-          <Button disabled={!formState.isValid} type="submit">
+          </StyledButton>
+          <Dialog isOpen={openDialogError} onClose={() => setOpenDialogError(false)} width="400px" hideCloseButton>
+            <TextLoginError>{t('login.error')}</TextLoginError>
+            <ErrorButton onClick={() => setOpenDialogError(false)}>OK</ErrorButton>
+          </Dialog>
+          <StyledButton disabled={!formState.isValid} type="submit">
             {t('login.buttonSubmit')}
-          </Button>
+          </StyledButton>
         </ButtonRow>
       </FormWrapper>
     </Unauthenticated>

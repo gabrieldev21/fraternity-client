@@ -18,5 +18,6 @@
         }
     },
     "buttonSubmit": "Entrar",
-    "buttonCancel": "Cadastrar"
+    "buttonCancel": "Cadastrar",
+    "error": "Os dados de login estão errados!"
 }

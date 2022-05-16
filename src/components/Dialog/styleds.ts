@@ -10,8 +10,8 @@ export const DialogCloseButton = styled.button`
   padding: 2px;
   border-radius: 6px;
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 14px;
+  right: 14px;
   &:hover {
     color: ${({ theme }) => theme.colors.main};
   }
@@ -27,6 +27,7 @@ export const DialogModal =
   border-radius: 8px;
   position: relative;
   background-color: ${({ theme }) => theme.colors.input.backgroundSecondary};
+  color: ${({ theme }) => theme.colors.textMain};  
 `;
 
 export const Container = styled.div`
