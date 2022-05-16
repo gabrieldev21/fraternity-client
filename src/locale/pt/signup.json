@@ -29,6 +29,5 @@
             }
         }
     },
-    "buttonSubmit": "Criar conta",
-    "error": "Os dados para registro estão errados!"
+    "buttonSubmit": "Criar conta"
 }

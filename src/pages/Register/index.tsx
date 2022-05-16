@@ -22,7 +22,13 @@ import Unauthenticated, {
 import Dialog from 'components/Dialog';
 import RegisterSchema from './RegisterSchema';
 import { ErrorButtonRegister, TextLoginError } from './styleds';
-import { RegisterForm } from './types';
+
+type RegisterForm = {
+  firstName: string,
+  lastName: string,
+  email: string,
+  password: string,
+};
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
