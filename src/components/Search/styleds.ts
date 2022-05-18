@@ -5,12 +5,11 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   min-width: 250px;
 
-  height: 35px;
+  height: 40px;
   background: ${({ theme }) => theme.colors.textSecondary};
   border: 0.5px solid ${({ theme }) => theme.colors.input.background};
   border-radius: 1.2rem;
   padding: 0 16px;
-  margin-right: 16px;
   align-items: center;
 
   input {

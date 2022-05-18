@@ -7,7 +7,7 @@ export const Wrapper =
   { isScrolled: boolean } >
   `
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-  height: 50px;
+  height: 60px;
   position: sticky;
   top: 0;
   padding: 0 16px;
@@ -19,6 +19,9 @@ export const Wrapper =
 
 export const Item = styled(Link)`
   width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   svg {
     fill: ${(props) => props.theme.colors.textMain};
