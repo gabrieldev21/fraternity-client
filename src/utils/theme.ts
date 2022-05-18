@@ -8,6 +8,7 @@ const theme: DefaultTheme = {
     background: '#292d38',
     textMain: '#fff',
     textSecondary: '#727b88',
+    backgroundSecondary: '#3d404a',
     backgroundGradient: `linear-gradient(
       45deg,
       rgba(41, 45, 56, 1) 0%,

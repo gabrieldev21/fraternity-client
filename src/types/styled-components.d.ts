@@ -11,6 +11,7 @@ declare module 'styled-components' {
       mainLight: string;
       textMain: string;
       textSecondary: string;
+      backgroundSecondary: string;
       input: {
         background: string;
         backgroundSecondary: string;
