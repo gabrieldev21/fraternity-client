@@ -9,7 +9,7 @@ const Search = () => {
       <S.Image>
         <MdSearch />
       </S.Image>
-      <S.Input placeholder="Search your mentorship" />
+      <S.Input placeholder="Are you looking for?" autoFocus />
     </S.Wrapper>
   );
 };

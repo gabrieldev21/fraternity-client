@@ -11,23 +11,7 @@ const Home = () => {
     <Authenticated>
       <h1>Hello World!!</h1>
       <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
-      <h1>Hello World!!</h1>
+
       <Button onClick={() => dispatch(logout())}>Logout</Button>
     </Authenticated>
   );
