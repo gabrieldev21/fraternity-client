@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { MdSearch } from 'react-icons/md';
 import * as S from './styleds';
 
-const Search = () => {
+type InputProps = React.HTMLProps<HTMLInputElement>;
+
+const Search = forwardRef<HTMLInputElement, InputProps>(({ ...others }, ref) => {
   return (
     <S.Wrapper>
-      <S.Image>
-        <MdSearch />
-      </S.Image>
-      <S.Input placeholder="Are you looking for?" autoFocus />
+      <MdSearch />
+      <input ref={ref} {...others} />
     </S.Wrapper>
   );
-};
+});
+
+Search.displayName = 'Search';
 
 export default Search;

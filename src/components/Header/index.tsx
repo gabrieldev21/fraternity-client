@@ -11,27 +11,25 @@ const Header = ({ isScrolled }: IHeader) => {
 
   return (
     <S.Wrapper isScrolled={isScrolled}>
-      <S.Item onClick={() => setShowSearch(!showSearch)} as="div">
-        <MdSearch size={32} />
+      <S.Item to="/">
+        <MdHomeFilled size={32} />
       </S.Item>
       {showSearch ? (
-        <Search />
+        <Search placeholder="show me" autoFocus onBlur={() => setShowSearch(false)} />
       ) : (
-        <>
-          <S.Item to="/">
-            <MdHomeFilled size={32} />
-          </S.Item>
-          <S.Item to="/friends">
-            <MdPeopleAlt size={32} />
-          </S.Item>
-          <S.Item to="/messages">
-            <MdOutlineChatBubble size={32} />
-          </S.Item>
-          <S.Item to="/settings">
-            <MdSettings size={32} />
-          </S.Item>
-        </>
+        <S.Item onClick={() => setShowSearch(true)} as="div">
+          <MdSearch size={32} />
+        </S.Item>
       )}
+      <S.Item to="/friends">
+        <MdPeopleAlt size={32} />
+      </S.Item>
+      <S.Item to="/messages">
+        <MdOutlineChatBubble size={32} />
+      </S.Item>
+      <S.Item to="/settings">
+        <MdSettings size={32} />
+      </S.Item>
     </S.Wrapper>
   );
 };
