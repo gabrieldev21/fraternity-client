@@ -7,7 +7,7 @@ export default {
   component: ProfileUser,
 };
 
-export const ButtonPrimary = () => (
+export const UserProfile = () => (
   <div
     style={{
       background: 'rgb(41, 45, 56)',
