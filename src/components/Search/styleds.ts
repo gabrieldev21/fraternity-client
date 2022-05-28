@@ -2,20 +2,20 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   min-width: 250px;
-
   height: 40px;
-  background: ${({ theme }) => theme.colors.textSecondary};
-  border: 0.5px solid ${({ theme }) => theme.colors.input.background};
-  border-radius: 1.2rem;
-  padding: 0 16px;
+  margin-right: 32px;
+  /* justify-content: space-between; */
+  /* background: ${({ theme }) => theme.colors.backgroundSecondary}; */
+  /* border: 0.5px solid ${({ theme }) => theme.colors.input.background}; */
+  /* border-radius: 1.2rem; */
+  /* padding: 0 16px; */
   align-items: center;
 
   input {
     width: 100%;
     border: none;
-    background-color: ${({ theme }) => theme.colors.textSecondary};
+    background-color: ${({ theme }) => theme.colors.backgroundSecondary};
     color: ${({ theme }) => theme.colors.textMain};
     outline: none;
     margin-left: 6px;
@@ -26,8 +26,8 @@ export const Wrapper = styled.div`
   }
 
   svg {
-    width: 22px;
-    height: 25px;
+    width: 32px;
+    height: 35px;
     color: ${({ theme }) => theme.colors.textMain};
   }
 `;

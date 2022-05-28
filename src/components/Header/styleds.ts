@@ -1,16 +1,16 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import LogoSVG from 'components/Logo';
-import { Link } from 'react-router-dom';
 
 export const Wrapper =
   styled.div <
   { isScrolled: boolean } >
   `
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-  height: 60px;
+  height: 70px;
+  padding: 0 24px;
   position: sticky;
   top: 0;
-  padding: 0 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,17 +18,47 @@ export const Wrapper =
 `;
 
 export const Item = styled(Link)`
-  width: 48px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  width: 90px;
   cursor: pointer;
+  text-decoration: none;
+  color: ${(props) => props.theme.colors.textMain};
   svg {
     fill: ${(props) => props.theme.colors.textMain};
   }
 `;
 
+export const WrapperItens = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+`;
+
+export const SplitLine = styled.hr`
+  height: 65px;
+  border: 0.1px solid ${({ theme }) => theme.colors.textMain};
+  opacity: 0.6;
+`;
+
 export const Logo = styled(LogoSVG)`
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 59px;
+  margin-bottom: 8px;
+  svg {
+    fill: ${(props) => props.theme.colors.textMain};
+  }
+`;
+
+export const Text = styled.div`
+  font-size: 12px;
+  margin-top: 8px;
+  color: ${(props) => props.theme.colors.textMain};
+`;
+
+export const User = styled.div`
+  width: 310px;
+  display: flex;
+  justify-content: center;
 `;
