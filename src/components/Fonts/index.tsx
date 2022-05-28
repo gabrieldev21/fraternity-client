@@ -1,16 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
-import NunitoRegular from 'assets/fonts/Nunito-Regular.ttf';
-
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: normal;
-    src:
-      url('${NunitoRegular}') format('ttf'),
-  }
- 
+  @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
   html, body {
     font-family: 'Nunito', sans-serif;
   }
