@@ -12,7 +12,6 @@ export const Wrapper =
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
   box-shadow: ${({ isScrolled }) => isScrolled && '0 10px 6px -6px #0003'};
 `;
@@ -32,7 +31,6 @@ export const Item = styled(Link)`
 
 export const WrapperItens = styled.div`
   display: flex;
-  align-items: center;
   margin-right: 16px;
 `;
 
@@ -51,14 +49,39 @@ export const Logo = styled(LogoSVG)`
   }
 `;
 
-export const Text = styled.div`
-  font-size: 12px;
-  margin-top: 8px;
-  color: ${(props) => props.theme.colors.textMain};
-`;
-
 export const User = styled.div`
   width: 310px;
   display: flex;
   justify-content: center;
+  margin-left: 8px;
+`;
+
+export const UserText = styled.div`
+  width: 310px;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  margin-left: 24px;
+`;
+
+export const Text = styled.div`
+  font-size: 12px;
+  font-weight: 500;
+  color: ${(props) => props.theme.colors.textMain};
+`;
+
+export const TextRole = styled.div`
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 8px;
+  color: ${(props) => props.theme.colors.textMain};
+`;
+
+export const Avatar = styled.img`
+  border: 10px solid #ffffff;
+  width: 32px;
+  height: 24px;
+  border-radius: 100%;
+  object-fit: contain;
+  background: #fff;
 `;
