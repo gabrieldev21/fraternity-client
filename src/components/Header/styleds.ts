@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import LogoSVG from 'components/Logo';
 
 export const Wrapper =
@@ -8,10 +8,10 @@ export const Wrapper =
   `
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
   height: 70px;
-  padding: 0 24px;
   position: sticky;
   top: 0;
-  display: flex;
+  display: flex;  
+  justify-content: space-evenly;
   align-items: center;
   box-shadow: ${({ isScrolled }) => isScrolled && '0 10px 6px -6px #0003'};
 `;
@@ -19,8 +19,8 @@ export const Wrapper =
 export const Item = styled(Link)`
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-  width: 90px;
   cursor: pointer;
   text-decoration: none;
   color: ${(props) => props.theme.colors.textMain};
@@ -29,15 +29,37 @@ export const Item = styled(Link)`
   }
 `;
 
-export const WrapperItens = styled.div`
-  display: flex;
-  margin-right: 16px;
+const selectedCSS = css`
+  background-color: ${({ theme }) => theme.colors.main};
+`
+
+export const LinkItens = styled(Link) <
+// eslint-disable-next-line prettier/prettier
+{ isActive?: boolean } >`
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+width: 90px;
+height: 70px;
+cursor: pointer;
+text-decoration: none;
+color: ${(props) => props.theme.colors.textMain};
+svg {
+  fill: ${(props) => props.theme.colors.textMain};
+}
+&:hover {
+ ${selectedCSS}
+}
+${({isActive}) => isActive && selectedCSS}
+
 `;
 
 export const SplitLine = styled.hr`
   height: 65px;
   border: 0.1px solid ${({ theme }) => theme.colors.textMain};
   opacity: 0.6;
+  margin: 0 8px;
 `;
 
 export const Logo = styled(LogoSVG)`
@@ -50,14 +72,14 @@ export const Logo = styled(LogoSVG)`
 `;
 
 export const User = styled.div`
-  width: 310px;
+  width: 330px;
   display: flex;
+  margin-left: -24px;
   justify-content: center;
-  margin-left: 8px;
 `;
 
 export const UserText = styled.div`
-  width: 310px;
+  width: 330px;
   display: flex;
   align-self: center;
   flex-direction: column;
@@ -67,6 +89,7 @@ export const UserText = styled.div`
 export const Text = styled.div`
   font-size: 12px;
   font-weight: 500;
+  margin-top: 8px;
   color: ${(props) => props.theme.colors.textMain};
 `;
 
@@ -78,10 +101,8 @@ export const TextRole = styled.div`
 `;
 
 export const Avatar = styled.img`
-  border: 10px solid #ffffff;
-  width: 32px;
-  height: 24px;
-  border-radius: 100%;
+  height: 42px;
+  width: 50px;
+  border-radius: 26px;
   object-fit: contain;
-  background: #fff;
 `;

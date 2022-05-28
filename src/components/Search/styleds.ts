@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
   display: flex;
   min-width: 250px;
   height: 40px;
-  margin-right: 32px;
   /* justify-content: space-between; */
   /* background: ${({ theme }) => theme.colors.backgroundSecondary}; */
   /* border: 0.5px solid ${({ theme }) => theme.colors.input.background}; */
