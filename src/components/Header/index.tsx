@@ -34,10 +34,7 @@ const Header = ({ isScrolled, url, onLogout, userHeader }: IHeader) => {
       <Search placeholder="Buscar" />
       <S.SplitLine />
       <S.User>
-        <S.Avatar
-          src="https://images-ext-1.discordapp.net/external/Juv7hur1BFvMLsyDnSY59UxD-eV-BYD_WUjGh5-mVR0/https/lh3.googleusercontent.com/pw/AM-JKLVgojX2kbYA-V16vetLTa0aHyZmnXYO9Wh4-gOvEHFlR2LCWG7UBYLGIcUqsUdGaa5KuqkpGBHAvzfWt0FOhYZLcHYo7wiT8l1LHc_T460n0vOIDa8i2LiRpTr869nRXRFXz6lMRtP8PGv3qfoAugJbgg%3Dw742-h989-no?width=506&height=676"
-          alt="photo"
-        />
+        <S.Avatar src={userHeader.photo} />
         <S.UserText>
           <S.Text>{userHeader.name}</S.Text>
           <S.TextRole>{userHeader.role}</S.TextRole>

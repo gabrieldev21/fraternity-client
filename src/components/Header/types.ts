@@ -8,4 +8,5 @@ export interface IHeader {
 interface userProps {
   name: string;
   role: string;
+  photo: string;
 }
