@@ -1,4 +1,11 @@
 export interface IHeader {
-  isScrolled: boolean;
+  userHeader: userProps;
   url: string;
+  onLogout: () => void;
+  isScrolled: boolean;
+}
+
+interface userProps {
+  name: string;
+  role: string;
 }

@@ -1,17 +1,13 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 
 import Search from 'components/Search';
-import { logout } from 'store/modules/user';
 
 import { ChatIcon, FeedIcon, FriendsIcon, LogoutIcon, NotificationIcon } from 'components/SVG';
 
 import { IHeader } from './types';
 import * as S from './styleds';
 
-const Header = ({ isScrolled, url }: IHeader) => {
-  const dispatch = useDispatch();
-
+const Header = ({ isScrolled, url, onLogout, userHeader }: IHeader) => {
   return (
     <S.Wrapper isScrolled={isScrolled}>
       <S.Item to="/">
@@ -43,12 +39,12 @@ const Header = ({ isScrolled, url }: IHeader) => {
           alt="photo"
         />
         <S.UserText>
-          <S.Text>DANIEL PEREIRA</S.Text>
-          <S.TextRole>Mentor</S.TextRole>
+          <S.Text>{userHeader.name}</S.Text>
+          <S.TextRole>{userHeader.role}</S.TextRole>
         </S.UserText>
       </S.User>
       <S.SplitLine />
-      <S.Item to="" onClick={() => dispatch(logout())}>
+      <S.Item to="" onClick={() => onLogout()}>
         <LogoutIcon />
         <S.Text>SAIR</S.Text>
       </S.Item>
