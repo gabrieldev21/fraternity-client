@@ -10,7 +10,7 @@ const Routes = () => {
 
   return (
     <Router>
-      {authenticated ? (
+      {!authenticated ? (
         <Switch>
           <Route path="/">
             <Home />
