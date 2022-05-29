@@ -6,6 +6,7 @@ export const Wrapper =
   styled.div <
   { isScrolled: boolean } >
   `
+  z-index: 9999;
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
   height: 70px;
   position: sticky;
