@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { logout } from 'store/modules/user';
 import Header from 'components/Header';
+import Footer from 'components/Footer';
 import * as S from './styleds';
 
 const Authenticated: React.FC = ({ children }) => {
@@ -28,6 +29,7 @@ const Authenticated: React.FC = ({ children }) => {
         }}
       />
       {children}
+      <Footer />
     </S.Wrapper>
   );
 };
