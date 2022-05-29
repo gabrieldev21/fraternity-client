@@ -24,7 +24,7 @@ export const SecondNavigations = styled.div`
   margin-top: 58px;
 `;
 
-export const Itens = styled.div`
+export const Items = styled.div`
   font-size: 12px;
   opacity: 0.8;
   margin: 16px 96px 0 0;

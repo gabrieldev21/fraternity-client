@@ -13,19 +13,19 @@ function Footer() {
       </S.LogoFraternity>
       <S.Navigations>
         <S.NavItem>Navegações</S.NavItem>
-        <S.Itens>Sobre</S.Itens>
-        <S.Itens>Carreiras</S.Itens>
-        <S.Itens>Adversidades</S.Itens>
-        <S.Itens>Pequenos negócios</S.Itens>
+        <S.Items>Sobre</S.Items>
+        <S.Items>Carreiras</S.Items>
+        <S.Items>Adversidades</S.Items>
+        <S.Items>Pequenos negócios</S.Items>
       </S.Navigations>
       <S.SecondNavigations>
-        <S.Itens>Marketing</S.Itens>
-        <S.Itens>Soluções de Vendas</S.Itens>
-        <S.Itens>Segurança</S.Itens>
+        <S.Items>Marketing</S.Items>
+        <S.Items>Soluções de Vendas</S.Items>
+        <S.Items>Segurança</S.Items>
       </S.SecondNavigations>
       <S.SecondNavigations>
-        <S.Itens>Comunidade</S.Itens>
-        <S.Itens>Termos de Privacidade </S.Itens>
+        <S.Items>Comunidade</S.Items>
+        <S.Items>Termos de Privacidade </S.Items>
       </S.SecondNavigations>
       <S.FastAcess>
         Acesso Rápido
