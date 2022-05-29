@@ -118,6 +118,7 @@ export const SelectLanguage = styled.select`
   display: flex;
   align-items: center;
   margin-top: 24px;
+  padding-left: 24px;
   font-size: 12px;
   opacity: 0.9;
 
