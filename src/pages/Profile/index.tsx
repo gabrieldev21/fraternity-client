@@ -10,7 +10,7 @@ import * as S from './styleds';
 
 import { academics, experiences, projects } from './mocks';
 
-const Home = () => {
+const Profile = () => {
   return (
     <Authenticated>
       <S.Container>
@@ -31,4 +31,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Profile;
