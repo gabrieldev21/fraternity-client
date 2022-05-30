@@ -7,8 +7,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   height: 215px;
+  margin-top: auto;
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
 `;
+
 export const Navigations = styled.div`
   margin-top: 32px;
 `;

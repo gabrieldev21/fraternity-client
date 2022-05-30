@@ -5,8 +5,8 @@ const Card = styled.div`
   border-radius: 4px;
   padding: 32px;
   color: #181818;
-  margin: 32px;
-  width: 79%;
+  margin: 24px 0 16px 0;
+  width: 80%;
   min-width: 700px;
 `;
 
