@@ -14,22 +14,22 @@ const Header = ({ isScrolled, url, onLogout, userHeader }: IHeader) => {
         <S.Logo />
       </S.Item>
       <S.SplitLine />
-      <S.LinkItens isActive={url === '/feed'} to="/feed">
+      <S.LinkItems isActive={url === '/feed'} to="/feed">
         <FeedIcon />
         <S.Text>FEED</S.Text>
-      </S.LinkItens>
-      <S.LinkItens isActive={url === '/friends'} to="/friends">
+      </S.LinkItems>
+      <S.LinkItems isActive={url === '/friends'} to="/friends">
         <FriendsIcon />
         <S.Text>AMIGOS</S.Text>
-      </S.LinkItens>
-      <S.LinkItens isActive={url === '/messages'} to="/messages">
+      </S.LinkItems>
+      <S.LinkItems isActive={url === '/messages'} to="/messages">
         <ChatIcon />
         <S.Text>CHAT</S.Text>
-      </S.LinkItens>
-      <S.LinkItens isActive={url === '/notifications'} to="/notifications">
+      </S.LinkItems>
+      <S.LinkItems isActive={url === '/notifications'} to="/notifications">
         <NotificationIcon />
         <S.Text>NOTIFICAÇÕES</S.Text>
-      </S.LinkItens>
+      </S.LinkItems>
       <S.SplitLine />
       <Search placeholder="Buscar" />
       <S.SplitLine />

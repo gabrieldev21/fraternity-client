@@ -6,9 +6,12 @@ import Button from 'components/Button';
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   height: 215px;
+  margin-top: 32px;
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
 `;
+
 export const Navigations = styled.div`
   margin-top: 32px;
 `;
@@ -121,9 +124,9 @@ export const SelectLanguage = styled.select`
   padding-left: 24px;
   font-size: 12px;
   opacity: 0.9;
+  color: ${(props) => props.theme.colors.main};
 
   option {
-    color: ${(props) => props.theme.colors.main};
     margin-left: 40px;
   }
 `;

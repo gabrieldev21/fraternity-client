@@ -34,14 +34,14 @@ const selectedCSS = css`
   background-color: ${({ theme }) => theme.colors.main};
 `
 
-export const LinkItens = styled(Link) <
+export const LinkItems = styled(Link) <
 // eslint-disable-next-line prettier/prettier
 { isActive?: boolean } >`
 display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
-width: 90px;
+width: 92px;
 height: 70px;
 cursor: pointer;
 text-decoration: none;
@@ -50,17 +50,16 @@ svg {
   fill: ${(props) => props.theme.colors.textMain};
 }
 &:hover {
- ${selectedCSS}
+ ${selectedCSS};
 }
-${({isActive}) => isActive && selectedCSS}
-
+${({isActive}) => isActive && selectedCSS};
 `;
 
 export const SplitLine = styled.hr`
   height: 65px;
   border: 0.1px solid ${({ theme }) => theme.colors.textMain};
   opacity: 0.6;
-  margin: 0 8px;
+  margin: 0 4px;
 `;
 
 export const Logo = styled(LogoSVG)`
@@ -75,7 +74,6 @@ export const Logo = styled(LogoSVG)`
 export const User = styled.div`
   width: 330px;
   display: flex;
-  margin-left: -24px;
   justify-content: center;
 `;
 
