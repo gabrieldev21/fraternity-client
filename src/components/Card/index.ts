@@ -6,8 +6,6 @@ const Card = styled.div`
   padding: 32px;
   color: #181818;
   margin: 24px 0 16px 0;
-  width: 80%;
-  min-width: 700px;
 `;
 
 export default Card;
