@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { RootStateOrAny, useSelector } from 'react-redux';
 
-import Profile from 'pages/Profile';
+import Profile from 'pages/ProfilePage';
 import UnauthenticatedRoutes from './UnauthenticatedRoutes';
 
 const Routes = () => {
@@ -12,6 +12,9 @@ const Routes = () => {
     <Router>
       {authenticated ? (
         <Switch>
+          <Route path="/profile/:id">
+            <Profile />
+          </Route>
           <Route path="/">
             <Profile />
           </Route>

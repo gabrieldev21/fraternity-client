@@ -11,9 +11,10 @@ export interface ProfileUserProps {
   state: string;
   city: string;
   networkNumber: number;
+  isCurrent?: boolean;
 }
 
-const ProfileUser = ({ banner, photo, name, title, city, state, networkNumber }: ProfileUserProps) => {
+const ProfileUser = ({ banner, photo, name, title, city, state, networkNumber, isCurrent }: ProfileUserProps) => {
   return (
     <S.CardStyled>
       <S.Banner src={banner} />
@@ -34,12 +35,16 @@ const ProfileUser = ({ banner, photo, name, title, city, state, networkNumber }:
             </S.Location>
           </S.Name>
           <S.Title>{title}</S.Title>
-          <S.ButtonPrimary>Contatos</S.ButtonPrimary>
+          <S.ButtonPrimary>{isCurrent ? 'Contatos' : 'Oferecer Mentoria'}</S.ButtonPrimary>
           <S.ButtonSecondary>{networkNumber} Conexões</S.ButtonSecondary>
         </S.ContentText>
       </S.Content>
     </S.CardStyled>
   );
+};
+
+ProfileUser.defaultProps = {
+  isCurrent: false,
 };
 
 export default ProfileUser;

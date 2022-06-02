@@ -3,7 +3,7 @@ import moment from 'moment';
 import React from 'react';
 import * as S from './styleds';
 
-interface Academy {
+export interface Academy {
   image: string;
   title: string;
   startedAt: Date;
