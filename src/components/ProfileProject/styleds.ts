@@ -19,6 +19,7 @@ export const Pagination = styled.span`
 export const Image = styled.img`
   height: 160px;
   cursor: pointer;
+  object-fit: cover;
 `;
 
 export const ListContainer = styled.div`

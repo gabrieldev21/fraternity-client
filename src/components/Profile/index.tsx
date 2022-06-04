@@ -10,7 +10,7 @@ import * as S from './styleds';
 export interface IProfile {
   user: ProfileUserProps;
   projects: Project[];
-  experiences: Experience[];
+  experiences?: Experience[];
   academics: Academy[];
 }
 
@@ -21,12 +21,14 @@ const Profile = ({ user, projects, experiences, academics }: IProfile) => {
         <S.Wrapper>
           <ProfileUser {...user} />
           <ProfileProject projects={projects} />
-          <ProfileExperience experiences={experiences} />
+          {!!experiences?.length && <ProfileExperience experiences={experiences} />}
           <ProfileAcademy academics={academics} />
         </S.Wrapper>
       </S.Container>
     </Authenticated>
   );
 };
+
+Profile.defaultProps = { experiences: [] };
 
 export default Profile;

@@ -19,10 +19,12 @@ const ProfileUser = ({ banner, photo, name, title, city, state, networkNumber, i
     <S.CardStyled>
       <S.Banner src={banner} />
       <S.Actions>
-        <S.IconButton>
-          <img src={edit} alt="editar profile" />
-          <span>Edit Profile</span>
-        </S.IconButton>
+        {isCurrent && (
+          <S.IconButton>
+            <img src={edit} alt="editar profile" />
+            <span>Edit Profile</span>
+          </S.IconButton>
+        )}
       </S.Actions>
       <S.Content>
         <S.Avatar src={photo} />

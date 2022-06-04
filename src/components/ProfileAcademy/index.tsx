@@ -31,7 +31,7 @@ const ProfileAcademy = ({ academics }: AcademyProps) => {
             <div>
               <S.Text>{moment(academy.startedAt).format('YYYY')}</S.Text>
               {' — '}
-              <S.Text>{academy.finishedAt ? moment(academy.finishedAt).format('YYYY') : 'Presente'}</S.Text>
+              <S.Text>{academy.finishedAt ? moment(academy.finishedAt).format('YYYY') : 'Atualmente'}</S.Text>
             </div>
             <S.Text>{academy.description}</S.Text>
           </S.ContentText>
