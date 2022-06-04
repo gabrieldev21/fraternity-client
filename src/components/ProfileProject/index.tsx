@@ -4,7 +4,7 @@ import moment from 'moment';
 import React from 'react';
 import * as S from './styleds';
 
-interface Project {
+export interface Project {
   title: string;
   subtitle: string;
   date: Date;

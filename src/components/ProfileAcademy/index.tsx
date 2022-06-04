@@ -3,7 +3,7 @@ import moment from 'moment';
 import React from 'react';
 import * as S from './styleds';
 
-interface Academy {
+export interface Academy {
   image: string;
   title: string;
   startedAt: Date;
@@ -31,7 +31,7 @@ const ProfileAcademy = ({ academics }: AcademyProps) => {
             <div>
               <S.Text>{moment(academy.startedAt).format('YYYY')}</S.Text>
               {' — '}
-              <S.Text>{academy.finishedAt ? moment(academy.finishedAt).format('YYYY') : 'Presente'}</S.Text>
+              <S.Text>{academy.finishedAt ? moment(academy.finishedAt).format('YYYY') : 'Atualmente'}</S.Text>
             </div>
             <S.Text>{academy.description}</S.Text>
           </S.ContentText>
