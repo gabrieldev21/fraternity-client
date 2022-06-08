@@ -22,7 +22,7 @@ const Header = ({ isScrolled, url, onLogout, userHeader }: IHeader) => {
         <FriendsIcon />
         <S.Text>AMIGOS</S.Text>
       </S.LinkItems>
-      <S.LinkItems isActive={url === '/messages'} to="/messages">
+      <S.LinkItems isActive={url === '/chat'} to="/chat">
         <ChatIcon />
         <S.Text>CHAT</S.Text>
       </S.LinkItems>

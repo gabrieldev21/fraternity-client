@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 export const CardStyled = styled(Card)`
   padding: 0;
-  max-height: 500px;
   display: flex;
+  flex: 1;
   flex-direction: column;
   margin: 0;
 `;

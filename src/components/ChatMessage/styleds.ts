@@ -5,10 +5,10 @@ import clipboard from 'assets/svgs/clipboard.svg';
 
 export const Container = styled(Card)`
   display: flex;
+  flex: 1;
   flex-direction: column;
-  max-width: 850px;
-  height: 100%;
   padding: 0;
+  margin: 0;
 `;
 
 export const Header = styled.div`
@@ -96,6 +96,7 @@ export const BodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  overflow-y: auto;
 `;
 
 export const SendMessage = styled.div`

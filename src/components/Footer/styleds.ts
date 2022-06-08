@@ -8,7 +8,7 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   height: 215px;
-  margin-top: 32px;
+  margin-top: auto;
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
 `;
 
