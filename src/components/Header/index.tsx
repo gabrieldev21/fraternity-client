@@ -30,9 +30,7 @@ const Header = ({ isScrolled, url, onLogout, userHeader }: IHeader) => {
         <NotificationIcon />
         <S.Text>NOTIFICAÇÕES</S.Text>
       </S.LinkItems>
-      <S.SplitLine />
-      <Search placeholder="Buscar" />
-      <S.SplitLine />
+      <Search />
       <S.User>
         <S.Avatar src={userHeader.photo} />
         <S.UserText>
