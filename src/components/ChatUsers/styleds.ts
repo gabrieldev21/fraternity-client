@@ -2,11 +2,11 @@ import Card from 'components/Card';
 import styled from 'styled-components';
 
 export const CardStyled = styled(Card)`
-  max-width: 290px;
   padding: 0;
   max-height: 500px;
   display: flex;
   flex-direction: column;
+  margin: 0;
 `;
 
 export const TitleHeader = styled.h3`

@@ -1,19 +1,20 @@
 import React from 'react';
 import * as S from './styleds';
 
-
-export interface ChatUsersProps{
-  conversations: {
-    id: string
-    name: string
-    photo: string
-    message: string
-  }[]
-  active: string
-  onSelect : (id: string) => void
+interface Conversation {
+  id: string;
+  name: string;
+  photo: string;
+  message: string;
 }
 
-const ChatUsers = ({conversations, active, onSelect}:ChatUsersProps) => {
+export interface ChatUsersProps {
+  conversations: Conversation[];
+  active: string;
+  onSelect: (id: string) => void;
+}
+
+const ChatUsers = ({ conversations, active, onSelect }: ChatUsersProps) => {
   return (
     <S.CardStyled>
       <S.Header>
@@ -21,7 +22,7 @@ const ChatUsers = ({conversations, active, onSelect}:ChatUsersProps) => {
       </S.Header>
       <S.Body>
         {conversations.map((conversation) => (
-          <S.Item onClick={()=> onSelect(conversation.id)} active={conversation.id === active} key={conversation.id}>
+          <S.Item onClick={() => onSelect(conversation.id)} active={conversation.id === active} key={conversation.id}>
             {active === conversation.id && <S.SelectedBar />}
             <S.Avatar src={conversation.photo} />
             <S.UserContent>
