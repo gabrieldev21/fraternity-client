@@ -4,6 +4,8 @@ import { RootStateOrAny, useSelector } from 'react-redux';
 
 import Profile from 'pages/ProfilePage';
 import Chat from 'pages/Chat';
+import Feed from 'pages/Feed';
+
 import UnauthenticatedRoutes from './UnauthenticatedRoutes';
 
 const Routes = () => {
@@ -18,6 +20,9 @@ const Routes = () => {
           </Route>
           <Route path="/chat">
             <Chat />
+          </Route>
+          <Route path="/feed">
+            <Feed />
           </Route>
           <Route path="/">
             <Profile />
