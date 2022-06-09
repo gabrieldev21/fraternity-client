@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import clipboard from 'assets/svgs/clipboard.svg';
 
 export const Container = styled(Card)`
+  min-height: 475px;
   display: flex;
   flex: 1;
   flex-direction: column;
