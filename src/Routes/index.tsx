@@ -11,7 +11,7 @@ const Routes = () => {
 
   return (
     <Router>
-      {!authenticated ? (
+      {authenticated ? (
         <Switch>
           <Route path="/profile/:id">
             <Profile />

@@ -12,5 +12,8 @@ export interface UserCredential {
 }
 
 export interface UserAuthResponse {
+  _id: string;
   token: string;
+  photo: string;
+  role: string;
 }

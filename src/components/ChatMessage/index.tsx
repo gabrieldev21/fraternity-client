@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import sendchat from 'assets/svgs/send-chat.svg';
 import * as S from './styleds';
@@ -16,12 +16,19 @@ export interface IChatMessage {
 
 const ChatMessage = ({ to, messages, onSubmit }: IChatMessage) => {
   const [content, setContent] = useState('');
+  const refContainer = useRef<HTMLDivElement>(null);
   const handleSubmit = () => {
     if (content.trim()) {
       onSubmit(content);
       setContent('');
     }
   };
+  useEffect(() => {
+    refContainer.current?.scrollTo({
+      top: refContainer.current.scrollHeight,
+      behavior: 'smooth',
+    });
+  }, [refContainer, messages]);
 
   return (
     <S.Container>
@@ -29,7 +36,7 @@ const ChatMessage = ({ to, messages, onSubmit }: IChatMessage) => {
         <S.Username>Chat com {to}</S.Username>
         <S.Preview>online</S.Preview>
       </S.Header>
-      <S.BodyWrapper>
+      <S.BodyWrapper ref={refContainer}>
         {messages.map((message) =>
           message.sentByMe ? (
             <S.SendMessage key={message.id}>

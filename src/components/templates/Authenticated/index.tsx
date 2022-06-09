@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import { logout } from 'store/modules/user';
@@ -8,6 +8,7 @@ import Footer from 'components/Footer';
 import * as S from './styleds';
 
 const Authenticated: React.FC = ({ children }) => {
+  const { name, photo, role } = useSelector((state: RootStateOrAny) => state?.user);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const dispatch = useDispatch();
@@ -21,12 +22,7 @@ const Authenticated: React.FC = ({ children }) => {
         url={location.pathname}
         isScrolled={isScrolled}
         onLogout={() => dispatch(logout())}
-        userHeader={{
-          name: 'Daniel Pereira',
-          role: 'Mentor',
-          photo:
-            'https://images-ext-1.discordapp.net/external/Juv7hur1BFvMLsyDnSY59UxD-eV-BYD_WUjGh5-mVR0/https/lh3.googleusercontent.com/pw/AM-JKLVgojX2kbYA-V16vetLTa0aHyZmnXYO9Wh4-gOvEHFlR2LCWG7UBYLGIcUqsUdGaa5KuqkpGBHAvzfWt0FOhYZLcHYo7wiT8l1LHc_T460n0vOIDa8i2LiRpTr869nRXRFXz6lMRtP8PGv3qfoAugJbgg%3Dw742-h989-no?width=506&height=676',
-        }}
+        userHeader={{ name, role, photo }}
       />
       {children}
       <Footer />
