@@ -3,7 +3,7 @@ import socket from 'utils/socket';
 import ChatMessage from '.';
 
 export default {
-  title: 'ChatMessage',
+  title: 'Chat/ChatMessage',
   component: ChatMessage,
 };
 
