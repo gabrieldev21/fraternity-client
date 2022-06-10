@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Loading from 'components/Loading';
+import Modal from 'components/Modal';
+import Dialog from 'components/Dialog';
 import edit from 'assets/svgs/edit-profile.svg';
 import navigation from 'assets/svgs/navigation-profile.svg';
 import * as S from './styleds';
@@ -15,6 +18,17 @@ export interface ProfileUserProps {
 }
 
 const ProfileUser = ({ banner, photo, name, title, city, state, networkNumber, isCurrent }: ProfileUserProps) => {
+  const [loading, setLoading] = useState(false);
+  const [openDialogMessage, setOpenDialogMessage] = useState(false);
+
+  const handleLoading = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setOpenDialogMessage(true);
+    }, 1200);
+  };
+
   return (
     <S.CardStyled>
       <S.Banner src={banner} />
@@ -37,7 +51,24 @@ const ProfileUser = ({ banner, photo, name, title, city, state, networkNumber, i
             </S.Location>
           </S.Name>
           <S.Title>{title}</S.Title>
-          <S.ButtonPrimary>{isCurrent ? 'Contatos' : 'Oferecer Mentoria'}</S.ButtonPrimary>
+          <S.ButtonPrimary onClick={handleLoading}>{isCurrent ? 'Contatos' : 'Oferecer Mentoria'}</S.ButtonPrimary>
+          {loading && (
+            <Modal>
+              <Loading />
+            </Modal>
+          )}
+          <Dialog
+            isOpen={openDialogMessage}
+            background="#fff"
+            onClose={() => setOpenDialogMessage(false)}
+            width="400px"
+            hideCloseButton
+          >
+            <S.TextLoginMessage>
+              Enviamos um email para Gabriel Pereira com uma carta de apresentação, aguarde-o aceitar.
+            </S.TextLoginMessage>
+            <S.MessageButton onClick={() => setOpenDialogMessage(false)}> JÁ É </S.MessageButton>
+          </Dialog>
           <S.ButtonSecondary>{networkNumber} Conexões</S.ButtonSecondary>
         </S.ContentText>
       </S.Content>

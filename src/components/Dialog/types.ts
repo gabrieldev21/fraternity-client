@@ -3,8 +3,10 @@ export interface IDialog {
   isOpen: boolean;
   width?: string;
   hideCloseButton?: boolean;
+  background?: string;
 }
 
 export interface IDialogModal {
   width: string;
+  background?: string;
 }

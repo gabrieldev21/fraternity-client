@@ -5,14 +5,21 @@ import Modal from 'components/Modal';
 import { IDialog } from './types';
 import * as S from './styleds';
 
-const Dialog: React.FC<IDialog> = ({ onClose, isOpen, hideCloseButton = false, children, width = '600px' }) => {
+const Dialog: React.FC<IDialog> = ({
+  onClose,
+  isOpen,
+  hideCloseButton = false,
+  children,
+  width = '600px',
+  background,
+}) => {
   if (!isOpen) {
     return null;
   }
 
   return (
     <Modal>
-      <S.DialogModal width={width}>
+      <S.DialogModal width={width} background={background}>
         {!hideCloseButton && (
           <S.DialogCloseButton>
             <BsXLg onClick={() => onClose()} />

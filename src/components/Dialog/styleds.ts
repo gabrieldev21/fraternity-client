@@ -26,7 +26,7 @@ export const DialogModal =
   padding: 32px;
   border-radius: 8px;
   position: relative;
-  background-color: ${({ theme }) => theme.colors.input.backgroundSecondary};
+  background-color: ${({ theme, background }) => background || theme.colors.input.backgroundSecondary};
   color: ${({ theme }) => theme.colors.textMain};  
 `;
 

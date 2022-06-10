@@ -49,12 +49,16 @@ const Chat = () => {
         ...conversations,
       ]
     : conversations;
+  const renderMessages = messages.map((message) => ({
+    ...message,
+    photo: to?.photo || message.photo,
+  }));
 
   return (
     <Authenticated>
       <S.Container>
-        <ChatConversations conversations={conversationsArray} active="0001" onSelect={setActive} />
-        <ChatMessage to="Gabriel Pereira" messages={messages} onSubmit={handleSubmit} />
+        <ChatConversations conversations={conversationsArray} active={to?._id || '0002'} onSelect={setActive} />
+        <ChatMessage to={`${to?.firstName} ${to?.lastName}`} messages={renderMessages} onSubmit={handleSubmit} />
       </S.Container>
     </Authenticated>
   );

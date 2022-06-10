@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import Card from 'components/Card';
+import Button from 'components/Button';
 
 export const CardStyled = styled(Card)`
   position: relative;
@@ -42,6 +43,17 @@ export const IconButton = styled.div`
   &:hover {
     box-shadow: rgb(0 0 0 / 20%) 0px 3px 3px -2px, rgb(0 0 0 / 14%) 0px 3px 4px 0px, rgb(0 0 0 / 12%) 0px 1px 8px 0px;
   }
+`;
+
+export const TextLoginMessage = styled.div`
+  color: #181818;
+  font-size: 20px;
+  text-align: center;
+`;
+
+export const MessageButton = styled(Button)`
+  margin-top: 8px;
+  padding: 16px 40px;
 `;
 
 IconButton.defaultProps = {
