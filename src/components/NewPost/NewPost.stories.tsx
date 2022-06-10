@@ -10,8 +10,8 @@ export const NewPostComponent = () => {
   return (
     <div style={{ padding: 30, background: 'rgb(41, 45, 56)' }}>
       <NewPost
-        onSubmit={(text) => {
-          console.log(text);
+        onSubmit={() => {
+          'hellow';
         }}
       />
     </div>

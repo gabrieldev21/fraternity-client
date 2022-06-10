@@ -134,6 +134,6 @@ export const TextContent = styled.p`
 `;
 
 export const MediaContent = styled.img`
-  height: 300px;
+  height: 500px;
   object-fit: cover;
 `;
